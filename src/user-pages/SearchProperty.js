@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import axios from "axios";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import UserHeader from "./searchpage/SearchUserHeader";
 import { Range, getTrackBackground } from "react-range";
 import PropTypes from "prop-types";
@@ -13,6 +13,7 @@ import FadeLoader from "react-spinners/FadeLoader";
 function SearchProperty({ handleMarkAsRead, problems, setProblems }) {
   const BASE_URL = process.env.REACT_APP_BASE_URL;
   const location = useLocation();
+  const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [allListings, setAllListings] = useState([]); // Store all fetched properties
   const [filteredListings, setFilteredListings] = useState([]); // Properties after filtering
@@ -906,9 +907,46 @@ function SearchProperty({ handleMarkAsRead, problems, setProblems }) {
                 {/* Property List based on View Mode */}
                 <div className={`search-property-property-list search-property-${viewMode}-view`}>
                   {viewMode === "map" ? (
-                    <div className="search-property-map-placeholder">
-                      <i className="fa-solid fa-map"></i>
-                      <p>Map view coming soon</p>
+                    <div className="search-property-map-view-container">
+                      <div className="search-property-map-grid">
+                        {filteredListings.map((property, idx) => (
+                          <div
+                            key={property._id}
+                            className="search-property-map-marker"
+                            style={{
+                              position: 'absolute',
+                              left: `${(idx % 5) * 20}%`,
+                              top: `${Math.floor(idx / 5) * 25}%`,
+                            }}
+                            onClick={() => navigate(`/details/${property._id}`)}
+                          >
+                            <div className="search-property-map-pin">
+                              <i className="fa-solid fa-house"></i>
+                            </div>
+                            <div className="search-property-map-popup">
+                              <p className="search-property-map-popup-price">
+                                ₹{property.sellType === "Sell"
+                                  ? Number(property.expectedPrice).toLocaleString("en-IN")
+                                  : Number(property.pricePerMonth).toLocaleString("en-IN")}
+                              </p>
+                              <p className="search-property-map-popup-title">
+                                {property.bedrooms} BHK
+                              </p>
+                              <p className="search-property-map-popup-location">
+                                {property.landmark}, {property.city}
+                              </p>
+                              <button className="search-property-map-popup-btn">
+                                View Details
+                              </button>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      {filteredListings.length === 0 && (
+                        <div className="search-property-no-results">
+                          <p>No properties found on map.</p>
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <>

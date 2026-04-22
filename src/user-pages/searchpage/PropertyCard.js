@@ -7,133 +7,132 @@ const PropertyCard = ({ property, viewMode = "grid" }) => {
   const navigate = useNavigate();
   const [isFavorited, setIsFavorited] = useState(false);
 
-  const getBadgeColor = (type) => {
-    const colors = {
-      "Buy": "#FF9500",
-      "Sell": "#FF9500",
-      "Rent": "#10B981",
-      "Lease": "#3B82F6",
-      "Commercial": "#8B5CF6",
-      "PG": "#EC4899",
-      "Co-living": "#EC4899"
+  const getListingTypeIcon = () => {
+    const icons = {
+      "Sell": "fa-cart-shopping",
+      "Rent": "fa-key",
+      "Lease": "fa-handshake",
+      "Commercial": "fa-building"
     };
-    return colors[type] || "#232761";
+    return icons[property.sellType] || "fa-home";
   };
 
-  const getListingTypeLabel = () => {
-    if (property.sellType === "Sell") return "Buy";
-    if (property.sellType === "Rent") return "Rent";
-    if (property.sellType === "Lease") return "Lease";
-    if (property.propertyCategory === "Commercial") return "Commercial";
-    return property.sellType;
+  const handleShare = () => {
+    const title = `${property.bedrooms} BHK ${property.propertyContains ? property.propertyContains[0] : "Apartment"} for ${property.sellType}`;
+    const text = `${property.landmark}, ${property.city}`;
+    
+    if (navigator.share) {
+      navigator.share({
+        title: title,
+        text: text,
+        url: window.location.href
+      }).catch(err => console.log("[v0] Share cancelled or failed:", err));
+    } else {
+      // Fallback: copy to clipboard
+      const url = window.location.href;
+      navigator.clipboard.writeText(`${title}\n${text}\n${url}`).then(() => {
+        alert("Property details copied to clipboard!");
+      }).catch(() => {
+        alert("Unable to share. Please try again.");
+      });
+    }
   };
 
-  const getMatchPercentage = () => {
-    return Math.floor(Math.random() * 30) + 70; // Random 70-99%
+  const handleLike = () => {
+    setIsFavorited(!isFavorited);
+    console.log("[v0] Property liked/unliked:", property._id, !isFavorited);
   };
 
-  const getVerificationBadges = () => {
-    const badges = [];
-    if (Math.random() > 0.5) badges.push("RERA Verified");
-    if (Math.random() > 0.5) badges.push("3D Tour Available");
-    if (Math.random() > 0.5) badges.push("Ready to Move");
-    return badges.slice(0, 2);
-  };
-
-  const getAmenities = () => {
-    const allAmenities = [
-      "Car Parking", "Gym", "CCTV", "Guard", "Club House",
-      "Water Supply", "Lift", "Balcony", "Garden"
-    ];
-    return allAmenities.slice(0, 3);
-  };
-
-  const isGridView = viewMode === "grid";
-
-  if (isGridView) {
+  // Grid View
+  if (viewMode === "grid") {
     return (
-      <div className="property-card-grid-item">
-        <div className="property-card-image-container">
+      <div className="prop-card">
+        <div className="prop-card-image-section">
           <img
             src={property.uploadedPhotos ? property.uploadedPhotos[0] : dummyImg}
             alt={`Property ${property._id}`}
+            className="prop-card-image"
           />
-          <div className="property-card-listing-badge" style={{ backgroundColor: getBadgeColor(getListingTypeLabel()) }}>
-            {getListingTypeLabel()}
+          
+          {/* Type Badge */}
+          <div className="prop-card-type-badge">
+            <i className={`fa-solid ${getListingTypeIcon()}`}></i>
+            {property.sellType}
           </div>
-          <div className="property-card-match-badge">
-            <i className="fa-solid fa-fire"></i> {getMatchPercentage()}% Match
-          </div>
-          <div className="property-card-actions-overlay">
-            <button className="property-card-icon-btn">
+
+          {/* Action Buttons */}
+          <div className="prop-card-image-actions">
+            <button
+              className="prop-card-action-btn prop-card-share-btn"
+              onClick={handleShare}
+              title="Share"
+            >
               <i className="fa-solid fa-share-nodes"></i>
             </button>
             <button
-              className="property-card-icon-btn"
-              onClick={() => setIsFavorited(!isFavorited)}
+              className={`prop-card-action-btn prop-card-heart-btn ${isFavorited ? "prop-card-heart-btn-active" : ""}`}
+              onClick={handleLike}
+              title={isFavorited ? "Remove from favorites" : "Add to favorites"}
             >
               <i className={`fa-${isFavorited ? "solid" : "regular"} fa-heart`}></i>
             </button>
           </div>
+
+          {/* Match Badge */}
+          <div className="prop-card-verified-badge">
+            <i className="fa-solid fa-check"></i> Verified
+          </div>
         </div>
 
-        <div className="property-card-grid-content">
-          <h3 className="property-card-title">
-            {property.bedrooms}
-            {property.bedrooms !== "1RK" && <> BHK</>} {property.propertyContains ? property.propertyContains[0] : "Flat"} for {property.sellType}
-          </h3>
+        <div className="prop-card-details-section">
+          {/* Price */}
+          <div className="prop-card-price-section">
+            <h3 className="prop-card-price">
+              ₹{property.sellType === "Sell"
+                ? Number(property.expectedPrice).toLocaleString("en-IN")
+                : Number(property.pricePerMonth).toLocaleString("en-IN")}
+            </h3>
+            {property.sellType !== "Sell" && (
+              <span className="prop-card-price-period">/month</span>
+            )}
+          </div>
 
-          <p className="property-card-location">
+          {/* Title */}
+          <h4 className="prop-card-title">
+            {property.bedrooms}
+            {property.bedrooms !== "1RK" && <> BHK</>} {property.propertyCategory === "Commercial" ? "Commercial" : "Apartment"} for {property.sellType}
+          </h4>
+
+          {/* Location */}
+          <p className="prop-card-location">
             <i className="fa-solid fa-location-dot"></i>
             {property.landmark.replace(/\b\w/g, (char) => char.toUpperCase())}, {property.city}
           </p>
 
-          <div className="property-card-verification-badges">
-            {getVerificationBadges().map((badge, idx) => (
-              <span key={idx} className="property-card-badge">
-                {badge === "RERA Verified" && <i className="fa-solid fa-check"></i>}
-                {badge === "3D Tour Available" && <i className="fa-solid fa-cube"></i>}
-                {badge === "Ready to Move" && <i className="fa-solid fa-check-circle"></i>}
-                {badge}
-              </span>
-            ))}
-          </div>
-
-          <div className="property-card-amenities">
-            {getAmenities().map((amenity, idx) => (
-              <span key={idx} className="property-card-amenity">
-                {amenity}
-              </span>
-            ))}
-          </div>
-
-          <div className="property-card-specs">
-            <div className="property-card-spec-item">
-              <span className="property-card-spec-label">Area</span>
-              <span className="property-card-spec-value">{property.areaSqft} sq.ft</span>
+          {/* Amenities */}
+          {property.amenities && property.amenities.length > 0 && (
+            <div className="prop-card-amenities">
+              {property.amenities.slice(0, 3).map((amenity, idx) => (
+                <span key={idx} className="prop-card-amenity-tag">{amenity}</span>
+              ))}
             </div>
-            <div className="property-card-spec-divider"></div>
-            <div className="property-card-spec-item">
-              <span className="property-card-spec-label">Price/sq.ft</span>
-              <span className="property-card-spec-value">₹{Math.round(property.pricePerSqFt)}</span>
+          )}
+
+          {/* Property Info Grid */}
+          <div className="prop-card-info-grid">
+            <div className="prop-card-info-item">
+              <span className="prop-card-info-label">Area</span>
+              <span className="prop-card-info-value">{property.areaSqft} sq.ft</span>
+            </div>
+            <div className="prop-card-info-item">
+              <span className="prop-card-info-label">Price/sq.ft</span>
+              <span className="prop-card-info-value">₹{Math.round(property.pricePerSqFt)}</span>
             </div>
           </div>
 
-          <div className="property-card-price-section">
-            <div className="property-card-price-main">
-              ₹{property.sellType === "Sell"
-                ? Number(property.expectedPrice).toLocaleString("en-IN")
-                : Number(property.pricePerMonth).toLocaleString("en-IN")}
-            </div>
-            {property.sellType !== "Sell" && (
-              <div className="property-card-price-sub">
-                /month
-              </div>
-            )}
-          </div>
-
+          {/* CTA Button */}
           <button
-            className="property-card-view-details-btn"
+            className="prop-card-cta-btn"
             onClick={() => navigate(`/details/${property._id}`)}
           >
             View Details
@@ -141,79 +140,83 @@ const PropertyCard = ({ property, viewMode = "grid" }) => {
         </div>
       </div>
     );
-  } else {
-    // List view
-    return (
-      <div className="property-card-list-item">
-        <div className="property-card-list-image">
-          <img
-            src={property.uploadedPhotos ? property.uploadedPhotos[0] : dummyImg}
-            alt={`Property ${property._id}`}
-          />
-          <div className="property-card-listing-badge" style={{ backgroundColor: getBadgeColor(getListingTypeLabel()) }}>
-            {getListingTypeLabel()}
+  }
+  
+  // List View
+  return (
+    <div className="prop-card-list">
+      <div className="prop-card-list-image-section">
+        <img
+          src={property.uploadedPhotos ? property.uploadedPhotos[0] : dummyImg}
+          alt={`Property ${property._id}`}
+          className="prop-card-list-image"
+        />
+        <div className="prop-card-type-badge">
+          <i className={`fa-solid ${getListingTypeIcon()}`}></i>
+          {property.sellType}
+        </div>
+      </div>
+
+      <div className="prop-card-list-content">
+        <div className="prop-card-list-top">
+          <div>
+            <h4 className="prop-card-list-title">
+              {property.bedrooms}
+              {property.bedrooms !== "1RK" && <> BHK</>} Apartment
+            </h4>
+            <p className="prop-card-list-location">
+              <i className="fa-solid fa-location-dot"></i>
+              {property.landmark.replace(/\b\w/g, (char) => char.toUpperCase())}, {property.city}
+            </p>
+          </div>
+          <div className="prop-card-list-price-section">
+            <p className="prop-card-list-price">
+              ₹{property.sellType === "Sell"
+                ? Number(property.expectedPrice).toLocaleString("en-IN")
+                : Number(property.pricePerMonth).toLocaleString("en-IN")}
+            </p>
+            {property.sellType !== "Sell" && (
+              <p className="prop-card-list-price-sub">/month</p>
+            )}
           </div>
         </div>
 
-        <div className="property-card-list-content">
-          <div className="property-card-list-header">
-            <div>
-              <h3 className="property-card-list-title">
-                {property.bedrooms}
-                {property.bedrooms !== "1RK" && <> BHK</>} {property.propertyContains ? property.propertyContains[0] : "Flat"} for {property.sellType}
-              </h3>
-              <p className="property-card-list-location">
-                <i className="fa-solid fa-location-dot"></i>
-                {property.landmark.replace(/\b\w/g, (char) => char.toUpperCase())}, {property.city}
-              </p>
-            </div>
-            <div className="property-card-list-price">
-              <div className="property-card-price-main">
-                ₹{property.sellType === "Sell"
-                  ? Number(property.expectedPrice).toLocaleString("en-IN")
-                  : Number(property.pricePerMonth).toLocaleString("en-IN")}
-              </div>
-              <div className="property-card-price-per-sqft">
-                ₹{Math.round(property.pricePerSqFt)}/sq.ft
-              </div>
-            </div>
-          </div>
+        <div className="prop-card-list-info">
+          <span className="prop-card-list-info-item">
+            <i className="fa-solid fa-expand"></i> {property.areaSqft} sq.ft
+          </span>
+          <span className="prop-card-list-info-item">
+            <i className="fa-solid fa-indian-rupee-sign"></i> ₹{Math.round(property.pricePerSqFt)}/sq.ft
+          </span>
+        </div>
 
-          <div className="property-card-list-specs">
-            <span><strong>Area:</strong> {property.areaSqft} sq.ft</span>
-            <span><strong>Category:</strong> {property.propertyCategory}</span>
-            <span><strong>Posted by:</strong> {property.sellerType}</span>
-          </div>
-
-          <div className="property-card-list-badges">
-            {getVerificationBadges().map((badge, idx) => (
-              <span key={idx} className="property-card-badge">{badge}</span>
-            ))}
-          </div>
-
-          <div className="property-card-list-footer">
+        <div className="prop-card-list-bottom">
+          <button
+            className="prop-card-list-cta-btn"
+            onClick={() => navigate(`/details/${property._id}`)}
+          >
+            View Details
+          </button>
+          <div className="prop-card-list-actions">
             <button
-              className="property-card-view-details-btn"
-              onClick={() => navigate(`/details/${property._id}`)}
+              className="prop-card-list-action-btn"
+              onClick={handleShare}
+              title="Share"
             >
-              View Details
+              <i className="fa-solid fa-share-nodes"></i>
             </button>
-            <div className="property-card-list-actions">
-              <button className="property-card-icon-btn">
-                <i className="fa-solid fa-share-nodes"></i>
-              </button>
-              <button
-                className="property-card-icon-btn"
-                onClick={() => setIsFavorited(!isFavorited)}
-              >
-                <i className={`fa-${isFavorited ? "solid" : "regular"} fa-heart`}></i>
-              </button>
-            </div>
+            <button
+              className={`prop-card-list-action-btn ${isFavorited ? "prop-card-list-action-btn-active" : ""}`}
+              onClick={handleLike}
+              title={isFavorited ? "Remove from favorites" : "Add to favorites"}
+            >
+              <i className={`fa-${isFavorited ? "solid" : "regular"} fa-heart`}></i>
+            </button>
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 };
 
 export default PropertyCard;
