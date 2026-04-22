@@ -8,12 +8,13 @@
     align-content: center;
     background-color: var(--primary-color);
     padding: 0 1rem;
-    border-bottom: 0.00625rem solid var(--primary-color);
+    border-bottom: 1px solid var(--dark-primary-color);
     max-height: 4.84375rem;
     min-height: 4.84375rem;
     max-width: none;
     margin: 0;
-    z-index: 2;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(35, 39, 97, 0.15);
 }
 
 .search-user-header-userHeaderNavbar {  

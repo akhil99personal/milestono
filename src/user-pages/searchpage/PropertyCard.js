@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import dummyImg from "../../images/dummyImage.webp";
 import "./PropertyCard.css";
 import { useNavigate } from "react-router-dom";
 
-const PropertyCard = ({ property }) => {
+const PropertyCard = ({ property, viewMode = "grid" }) => {
   const navigate = useNavigate();
+  const [isLiked, setIsLiked] = useState(false);
+
   function numberToWords(num) {
     num = Number(num).toFixed(0);
     const ones = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine",
@@ -40,90 +42,153 @@ const PropertyCard = ({ property }) => {
 
     return result.trim();
   }
+
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: property.bedrooms + " BHK in " + property.landmark,
+        text: "Check out this property",
+        url: window.location.href + "/details/" + property._id
+      });
+    } else {
+      alert("Property: " + property.landmark);
+    }
+  };
+
+  const handleLike = () => {
+    setIsLiked(!isLiked);
+  };
+
   return (
-    <div className="property-card-property" key={property._id}>
-      {property.featured && (
-        <div className="branding-container">
-          <div className="verified">
-            <i className="fa-solid fa-check"></i> Featured
-          </div>
-        </div>
-      )}
-
+    <div className={`property-card-property property-card-${viewMode}`} key={property._id}>
+      {/* Image Container */}
       <div className="property-card-property-image">
-        <img
-          src={property.uploadedPhotos ? property.uploadedPhotos[0] : dummyImg}
-          alt={`Apartment ${property._id}`}
-        />
-      </div>
-      <div className="property-card-property-details">
-        <h2>
-          {property.bedrooms}
-          {property.bedrooms !== "1RK" && <> BHK</>} Flat for{" "}
-          {property.sellType} in{" "}
-          {property.landmark.replace(/\b\w/g, (char) => char.toUpperCase())},{" "}
-          {property.city}
-        </h2>
-        <p>
-          Features of properties posted by <b>{property.sellerType}</b>
-        </p>
-        <div className="property-card-details-description">
-          <span className="property-card-description">
-            City: {property.city}
-          </span>
-          <span className="property-card-description">
-            Property Category: {property.propertyCategory}
-          </span>
-          <span className="property-card-description">
-            {property.sellType === "Sell" ? "Carpet Area:" : "Deposite:"}
+        {property.uploadedPhotos && property.uploadedPhotos.length > 0 ? (
+          <img
+            src={property.uploadedPhotos[0]}
+            alt={`${property.bedrooms} BHK in ${property.landmark}`}
+          />
+        ) : (
+          <img src={dummyImg} alt={`Apartment ${property._id}`} />
+        )}
 
-            {property.sellType === "Sell"
-              ? property.areaSqft + " sq.ft"
-              : "₹ " + property.deposite}
-          </span>
-          <span className="property-card-description">
-            Property Type: {property.sellType}
-          </span>
-        </div>
-        <div className="price-section">
-          <div className="price-main">
-            ₹
-            {property.sellType === "Sell"
-              ? Number(property.expectedPrice).toLocaleString("en-IN")
-              : Number(property.pricePerMonth).toLocaleString("en-IN")}
-            <div className="price-words">
-              {property.sellType === "Sell"
-                ? numberToWords(property.expectedPrice)
-                : numberToWords(property.pricePerMonth)}
-            </div>
+        {/* Category Badge */}
+        {property.propertyCategory && (
+          <div className="property-card-badge">
+            {property.propertyCategory.substring(0, 2).toUpperCase()}
           </div>
+        )}
 
-          <div className="price-extra">
-            {property.sellType === "Sell" ? (
-              <span className="price-tag">
-                ₹ {Math.round(property.pricePerSqFt).toLocaleString("en-IN")} / sq.ft
-              </span>
-            ) : (
-              <span className="price-tag">
-                Deposit ₹ {Math.round(property.deposite).toLocaleString("en-IN")}
-              </span>
+        {/* Like Button in Image */}
+        <button
+          className={`property-card-like-btn ${isLiked ? "liked" : ""}`}
+          onClick={handleLike}
+          title="Add to favorites"
+        >
+          <i className={`fa-${isLiked ? "solid" : "regular"} fa-heart`}></i>
+        </button>
+      </div>
+
+      {/* Details Container */}
+      <div className="property-card-property-details">
+        {/* Title and Price */}
+        <div className="property-card-header">
+          <div className="property-card-title-section">
+            <h2 className="property-card-title">
+              {property.bedrooms}
+              {property.bedrooms !== "1RK" && <> BHK</>}
+              {property.landmark && <> - {property.landmark.replace(/\b\w/g, (char) => char.toUpperCase())}</>}
+            </h2>
+          </div>
+          <div className="property-card-price">
+            <span className="property-card-price-main">
+              ₹{property.sellType === "Sell"
+                ? Number(property.expectedPrice).toLocaleString("en-IN")
+                : Number(property.pricePerMonth).toLocaleString("en-IN")}
+            </span>
+            {property.sellType === "Rent" && <span className="property-card-price-period">/mo</span>}
+          </div>
+        </div>
+
+        {/* Location */}
+        <div className="property-card-location">
+          <i className="fa-solid fa-location-dot"></i>
+          <span>{property.city}</span>
+        </div>
+
+        {/* Features Row */}
+        <div className="property-card-features">
+          {property.bedrooms && (
+            <div className="property-card-feature-item">
+              <i className="fa-solid fa-bed"></i>
+              <span>{property.bedrooms}</span>
+            </div>
+          )}
+          {property.bathrooms && (
+            <div className="property-card-feature-item">
+              <i className="fa-solid fa-bath"></i>
+              <span>{property.bathrooms}</span>
+            </div>
+          )}
+          {property.areaSqft && (
+            <div className="property-card-feature-item">
+              <i className="fa-solid fa-ruler-combined"></i>
+              <span>{property.areaSqft} sqft</span>
+            </div>
+          )}
+          {property.rating && (
+            <div className="property-card-feature-item">
+              <i className="fa-solid fa-star"></i>
+              <span>{property.rating}</span>
+            </div>
+          )}
+        </div>
+
+        {/* Price Per Sqft */}
+        {property.sellType === "Sell" && property.pricePerSqFt && (
+          <div className="property-card-price-sqft">
+            ₹ {Math.round(property.pricePerSqFt).toLocaleString("en-IN")} / sq.ft
+          </div>
+        )}
+
+        {/* Amenities */}
+        {property.amenities && property.amenities.length > 0 && (
+          <div className="property-card-amenities">
+            {property.amenities.slice(0, 3).map((amenity, idx) => (
+              <span key={idx} className="property-card-amenity">{amenity}</span>
+            ))}
+            {property.amenities.length > 3 && (
+              <span className="property-card-amenity-more">+{property.amenities.length - 3}</span>
             )}
           </div>
-        </div>
-        <div className="property-card-property-actions">
+        )}
+
+        {/* Action Buttons */}
+        <div className="property-card-actions">
           <button
-            onClick={() => {
-              navigate(`/details/${property._id}`);
-            }}
+            className="property-card-unlock-btn"
+            onClick={() => navigate(`/details/${property._id}`)}
           >
-            <i className="fa-solid fa-eye"></i> <span>View Details</span>
+            <i className="fa-solid fa-lock"></i> Unlock Contact
+          </button>
+          <button
+            className="property-card-share-btn"
+            onClick={handleShare}
+            title="Share"
+          >
+            <i className="fa-solid fa-share-nodes"></i>
           </button>
         </div>
       </div>
-      {property.bulkCount && property.bulkCount > 1 && (
-        <div className="bulk-container">X {property.bulkCount}</div>
+
+      {/* Verified Badge */}
+      {property.verified && (
+        <div className="property-card-verified-badge">
+          <i className="fa-solid fa-check"></i> Verified
+        </div>
       )}
     </div>
   );
 };
+
 export default PropertyCard;

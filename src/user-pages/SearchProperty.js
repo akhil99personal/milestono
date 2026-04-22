@@ -26,6 +26,16 @@ function SearchProperty({ handleMarkAsRead, problems, setProblems }) {
   // AutocompleteSuggestion.fetchAutocompleteSuggestions() API instead.
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [filterApplied, setFilterApplied] = useState(false);
+  const [viewMode, setViewMode] = useState("grid"); // "grid", "list", "map"
+  const [quickFilters, setQuickFilters] = useState({
+    all: true,
+    buy: false,
+    sell: false,
+    rent: false,
+    lease: false,
+    commercial: false,
+    pg: false,
+  });
   const [filters, setFilters] = useState({
     category: "",
     bedrooms: [],
@@ -440,6 +450,32 @@ function SearchProperty({ handleMarkAsRead, problems, setProblems }) {
     });
   };
 
+  const handleQuickFilterChange = (filterKey) => {
+    setQuickFilters((prev) => {
+      const newFilters = { ...prev };
+      
+      if (filterKey === "all") {
+        // If "all" is clicked, reset all other filters
+        Object.keys(newFilters).forEach((key) => {
+          newFilters[key] = key === "all";
+        });
+      } else {
+        // If any other filter is clicked, disable "all"
+        newFilters.all = false;
+        newFilters[filterKey] = !newFilters[filterKey];
+        
+        // If all other filters are deselected, enable "all"
+        const anyOtherSelected = Object.keys(newFilters)
+          .filter((k) => k !== "all")
+          .some((k) => newFilters[k]);
+        if (!anyOtherSelected) {
+          newFilters.all = true;
+        }
+      }
+      return newFilters;
+    });
+  };
+
   const clearAllFilters = () => {
     setFilters({
       category: "",
@@ -451,6 +487,15 @@ function SearchProperty({ handleMarkAsRead, problems, setProblems }) {
       areaRange: [0, 20000],
       priceRange: [0, 1000000000],
       type: "",
+    });
+    setQuickFilters({
+      all: true,
+      buy: false,
+      sell: false,
+      rent: false,
+      lease: false,
+      commercial: false,
+      pg: false,
     });
     setSearchCity("");
     setCityCoordinates({ lat: -1, lng: -1 });
@@ -827,8 +872,7 @@ function SearchProperty({ handleMarkAsRead, problems, setProblems }) {
                 <div className="search-property-updates">
                   <p>
                     {filteredListings.length} {filterApplied && filters.category}{" "}
-                    Apartments for{" "}
-                    {filterApplied && filters.type ? filters.type : "sale"}
+                    Properties
                     {searched
                       ? " in " + searched
                       : searchCity
@@ -838,18 +882,99 @@ function SearchProperty({ handleMarkAsRead, problems, setProblems }) {
                   <p>Updated: {formatDate(new Date())}</p>
                 </div>
 
-                <div className="search-property-property-list">
-                  {filteredListings.map((property) => (
-                    <PropertyCard key={property._id} property={property} />
-                  ))}
-
-                  {filteredListings.length === 0 && !loading && (
-                    <div className="search-property-no-results">
-                      <p>No properties found matching your criteria.</p>
-                      <p>Try adjusting your filters or search location.</p>
-                    </div>
-                  )}
+                {/* Quick Filter Pills */}
+                <div className="search-property-quick-filters">
+                  <button
+                    className={`search-property-filter-pill ${quickFilters.all ? "active" : ""}`}
+                    onClick={() => handleQuickFilterChange("all")}
+                  >
+                    All
+                  </button>
+                  <button
+                    className={`search-property-filter-pill ${quickFilters.buy ? "active" : ""}`}
+                    onClick={() => handleQuickFilterChange("buy")}
+                  >
+                    Buy
+                  </button>
+                  <button
+                    className={`search-property-filter-pill ${quickFilters.sell ? "active" : ""}`}
+                    onClick={() => handleQuickFilterChange("sell")}
+                  >
+                    Sell
+                  </button>
+                  <button
+                    className={`search-property-filter-pill ${quickFilters.rent ? "active" : ""}`}
+                    onClick={() => handleQuickFilterChange("rent")}
+                  >
+                    Rent
+                  </button>
+                  <button
+                    className={`search-property-filter-pill ${quickFilters.lease ? "active" : ""}`}
+                    onClick={() => handleQuickFilterChange("lease")}
+                  >
+                    Lease
+                  </button>
+                  <button
+                    className={`search-property-filter-pill ${quickFilters.commercial ? "active" : ""}`}
+                    onClick={() => handleQuickFilterChange("commercial")}
+                  >
+                    Commercial
+                  </button>
+                  <button
+                    className={`search-property-filter-pill ${quickFilters.pg ? "active" : ""}`}
+                    onClick={() => handleQuickFilterChange("pg")}
+                  >
+                    PG / Co-living
+                  </button>
                 </div>
+
+                {/* View Mode Toggle */}
+                <div className="search-property-view-toggle">
+                  <button
+                    className={`search-property-view-btn ${viewMode === "grid" ? "active" : ""}`}
+                    onClick={() => setViewMode("grid")}
+                    title="Grid View"
+                  >
+                    <i className="fa-solid fa-grip"></i>
+                  </button>
+                  <button
+                    className={`search-property-view-btn ${viewMode === "list" ? "active" : ""}`}
+                    onClick={() => setViewMode("list")}
+                    title="List View"
+                  >
+                    <i className="fa-solid fa-list"></i>
+                  </button>
+                  <button
+                    className={`search-property-view-btn ${viewMode === "map" ? "active" : ""}`}
+                    onClick={() => setViewMode("map")}
+                    title="Map View"
+                  >
+                    <i className="fa-solid fa-map"></i>
+                  </button>
+                </div>
+
+                {/* Property Listings or Map */}
+                {viewMode === "map" ? (
+                  <div className="search-property-map-view">
+                    <div className="search-property-map-placeholder">
+                      <p>Map view coming soon</p>
+                      <p>Your {filteredListings.length} properties will be displayed on the map</p>
+                    </div>
+                  </div>
+                ) : (
+                  <div className={`search-property-property-list search-property-property-list-${viewMode}`}>
+                    {filteredListings.map((property) => (
+                      <PropertyCard key={property._id} property={property} viewMode={viewMode} />
+                    ))}
+
+                    {filteredListings.length === 0 && !loading && (
+                      <div className="search-property-no-results">
+                        <p>No properties found matching your criteria.</p>
+                        <p>Try adjusting your filters or search location.</p>
+                      </div>
+                    )}
+                  </div>
+                )}
               </>
             )}
           </div>
