@@ -20,7 +20,6 @@ const UserHeader = ({
   setCoordinates,
   setFilterApplied,
   setPlacePredictions,
-
   togglePopover,
   searchCity,
 }) => {
@@ -46,62 +45,73 @@ const UserHeader = ({
 
   const basePath = location.pathname.split("/")[1];
   const dynamicName = routeNames[`/${basePath}`] || "Milestono";
+  
   const handleStepDec = () => {
     navigate(-1);
   };
 
   return (
     <div className="search-user-header-navigation-header">
-      <p
-        onClick={handleStepDec}
-        className={`search-user-header-back-head ${opposite && "search-user-header-red-text"}`}
-        style={{ fontSize: "2rem" }}
-      >
-        {dynamicName}
-      </p>
-      <div className="search-user-header-property-search-bar">
-        <div
-          className="search-user-header-search-input"
-          style={{ display: "flex" }}
+      <div className="search-user-header-logo-section">
+        <p
+          onClick={handleStepDec}
+          className={`search-user-header-back-head ${opposite && "search-user-header-red-text"}`}
         >
-          <input
-            type="text"
-            placeholder={"Enter specific Area/Landmark to find your location"}
-            value={searchQuery}
-            onChange={handlePlaceChange}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                setSearched(searchQuery);
-                handleSearch();
-              }
-            }}
-          />
-          {placePredictions.length > 0 && (
-            <ul className="search-user-header-autocomplete-list">
-              {placePredictions.map((prediction) => (
-                <li
-                  key={prediction.place_id}
-                  onClick={() => handlePlaceSelect(prediction)}
-                >
-                  {prediction.description}
-                </li>
-              ))}
-            </ul>
-          )}
+          {dynamicName}
+        </p>
+      </div>
+      <div className="search-user-header-property-search-bar">
+        <div className="search-user-header-search-input-wrapper">
+          <div className="search-user-header-search-input">
+            <i className="fa-solid fa-magnifying-glass search-user-header-search-icon"></i>
+            <input
+              type="text"
+              placeholder="Search by city, locality, project name, property type..."
+              value={searchQuery}
+              onChange={handlePlaceChange}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  setSearched(searchQuery);
+                  handleSearch();
+                }
+              }}
+            />
+            {placePredictions.length > 0 && (
+              <ul className="search-user-header-autocomplete-list">
+                {placePredictions.map((prediction) => (
+                  <li
+                    key={prediction.place_id}
+                    onClick={() => handlePlaceSelect(prediction)}
+                  >
+                    {prediction.description}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
 
-        <div className="search-user-header-search-btns">
+        <div className="search-user-header-action-buttons">
+          <button className="search-user-header-button search-user-header-valuation-btn">
+            <i className="fa-solid fa-star"></i> Get Valuation
+          </button>
+          <button className="search-user-header-button search-user-header-compare-btn">
+            <i className="fa-solid fa-code-compare"></i> Compare
+          </button>
+        </div>
+
+        <div className="search-user-header-right-menu">
           <button
             onClick={() => {
               setSearched(searchQuery);
               handleSearch();
             }}
-            className="search-user-header-button"
+            className="search-user-header-button search-user-header-search-btn"
           >
-            <i className="fa-solid fa-search"></i> Search
+            <i className="fa-solid fa-search"></i>
           </button>
           <button
-            className="search-user-header-button"
+            className="search-user-header-button search-user-header-clear-btn"
             onClick={async () => {
               setSearchQuery("");
               setSearched("");
@@ -125,8 +135,9 @@ const UserHeader = ({
               await new Promise((resolve) => setTimeout(resolve, 0));
             }}
           >
-            <i className="fa-solid fa-eraser"></i> Clear
+            <i className="fa-solid fa-eraser"></i>
           </button>
+
           <div className="search-user-header-userHeaderNavbar">
             <button className="search-user-header-post-button search-user-header-button">
               <a
@@ -189,7 +200,7 @@ const UserHeader = ({
               className="search-user-header-filter-button search-user-header-button"
               onClick={togglePopover}
             >
-              <i className="fa-solid fa-filter"></i> Filter
+              <i className="fa-solid fa-filter"></i>
             </button>
           )}
         </div>

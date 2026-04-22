@@ -615,3 +615,236 @@
     font-size: 0.9rem;
   }
 }
+
+/* New Filter Tabs Styles */
+.search-property-filter-tabs {
+  width: 100%;
+  background-color: white;
+  border-bottom: 2px solid #e5e7eb;
+  padding: 0 1.5rem;
+  margin-bottom: 1.5rem;
+  overflow-x: auto;
+}
+
+.search-property-filter-tabs-scroll {
+  display: flex;
+  gap: 0.5rem;
+  min-width: fit-content;
+  padding: 0;
+}
+
+.search-property-filter-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 16px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #666;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.search-property-filter-tab:hover {
+  color: #232761;
+}
+
+.search-property-filter-tab-icon {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.search-property-filter-tab-active {
+  color: #FF9500;
+  border-bottom-color: #FF9500;
+}
+
+/* Featured Section */
+.search-property-featured-section {
+  background: linear-gradient(135deg, #FFF8DC 0%, #FFF4D9 100%);
+  border: 1px solid #FFD699;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.search-property-featured-header {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.search-property-featured-icon {
+  font-size: 1.5rem;
+  color: #FF9500;
+  flex-shrink: 0;
+}
+
+.search-property-featured-title {
+  color: #232761;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.search-property-featured-subtitle {
+  color: #666;
+  font-size: 0.85rem;
+  margin: 4px 0 0 0;
+}
+
+.search-property-featured-button {
+  background-color: #FF9500;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.search-property-featured-button:hover {
+  background-color: #E68800;
+  transform: translateY(-2px);
+}
+
+/* Updates Header with View Toggle */
+.search-property-updates-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin: 0 auto 20px;
+  gap: 16px;
+}
+
+.search-property-updates-date {
+  color: #999 !important;
+  font-size: 0.85rem !important;
+  font-weight: 400 !important;
+}
+
+.search-property-view-toggle {
+  display: flex;
+  gap: 8px;
+  background-color: #f5f5f5;
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.search-property-view-btn {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: #999;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.search-property-view-btn:hover {
+  color: #232761;
+  background-color: white;
+}
+
+.search-property-view-btn-active {
+  background-color: white;
+  color: #FF9500;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Property List Layouts */
+.search-property-property-list.search-property-grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  padding-bottom: 5rem;
+}
+
+.search-property-property-list.search-property-list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-bottom: 5rem;
+}
+
+/* Map View Placeholder */
+.search-property-map-placeholder {
+  width: 100%;
+  height: 500px;
+  background-color: #f5f5f5;
+  border: 2px dashed #e5e7eb;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  gap: 12px;
+}
+
+.search-property-map-placeholder i {
+  font-size: 3rem;
+  opacity: 0.3;
+}
+
+.search-property-map-placeholder p {
+  margin: 0;
+  font-size: 1rem;
+  color: #999;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .search-property-filter-tabs {
+    padding: 0 1rem;
+  }
+
+  .search-property-filter-tab {
+    padding: 10px 12px;
+    font-size: 0.85rem;
+  }
+
+  .search-property-featured-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .search-property-featured-header {
+    justify-content: center;
+  }
+
+  .search-property-featured-button {
+    width: 100%;
+  }
+
+  .search-property-updates-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .search-property-property-list.search-property-grid-view {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+}

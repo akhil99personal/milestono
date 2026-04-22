@@ -462,47 +462,71 @@ export default function PropertyDetails() {
               </div>
             </div> */}
             <div className="property-details-page-slider-container">
-              <button onClick={prevSlide} className="property-details-page-slider-button">
-                <i className="fa-solid fa-circle-chevron-left"></i>
-              </button>
+              <div className="property-details-page-carousel-wrapper">
+                <button onClick={prevSlide} className="property-details-page-carousel-button property-details-page-carousel-button-prev">
+                  <i className="fa-solid fa-chevron-left"></i>
+                </button>
 
-              <div className="property-details-page-property-slider">
-                {property.uploadedPhotos &&
-                  property.uploadedPhotos.map((image, index) =>
-                    index === currentIndex ? (
-                      <div key={index} className="property-details-page-slide property-details-page-active-slide">
-                        <img
-                          src={image}
-                          alt={`Slide ${index}`}
-                          className="property-details-page-slider-image"
-                        />
-                        <div className="property-details-page-header" style={{ position: "absolute", right: 0 }}>
-                          <div className="property-details-page-header-right property-details-page-actions-mob">
-                            <button className="property-details-page-action-btn" onClick={handleShareClick}>
-                              <i className="fa fa-share-nodes"></i> <span>Share</span>
-                            </button>
-                            <button
-                              className={`property-details-page-action-btn ${saved ? "property-details-page-saved" : ""}`}
-                              onClick={() => {
-                                if (saved) {
-                                  handleUnSaveClick();
-                                } else {
-                                  handleSaveClick();
-                                }
-                              }}
-                            >
-                              <i className="fa fa-heart"></i> <span>{saved ? "Unsave" : "Save"}</span>
-                            </button>
+                <div className="property-details-page-property-slider">
+                  {property.uploadedPhotos &&
+                    property.uploadedPhotos.map((image, index) =>
+                      index === currentIndex ? (
+                        <div key={index} className="property-details-page-slide property-details-page-active-slide">
+                          <img
+                            src={image}
+                            alt={`Slide ${index}`}
+                            className="property-details-page-slider-image"
+                          />
+                          <div className="property-details-page-carousel-overlay">
+                            <div className="property-details-page-carousel-badge">
+                              {property.sellType}
+                            </div>
+                            <div className="property-details-page-carousel-actions">
+                              <button className="property-details-page-carousel-action-btn" onClick={handleShareClick} title="Share">
+                                <i className="fa-solid fa-share-nodes"></i>
+                              </button>
+                              <button
+                                className={`property-details-page-carousel-action-btn ${saved ? "property-details-page-carousel-action-btn-active" : ""}`}
+                                onClick={() => {
+                                  if (saved) {
+                                    handleUnSaveClick();
+                                  } else {
+                                    handleSaveClick();
+                                  }
+                                }}
+                                title={saved ? "Saved" : "Save"}
+                              >
+                                <i className={`fa-${saved ? "solid" : "regular"} fa-heart`}></i>
+                              </button>
+                            </div>
+                          </div>
+                          <div className="property-details-page-carousel-counter">
+                            {currentIndex + 1} / {property.uploadedPhotos.length}
                           </div>
                         </div>
-                      </div>
-                    ) : null,
-                  )}
+                      ) : null,
+                    )}
+                </div>
+
+                <button onClick={nextSlide} className="property-details-page-carousel-button property-details-page-carousel-button-next">
+                  <i className="fa-solid fa-chevron-right"></i>
+                </button>
               </div>
 
-              <button onClick={nextSlide} className="property-details-page-slider-button">
-                <i className="fa-solid fa-circle-chevron-right"></i>
-              </button>
+              {/* Thumbnail Navigation */}
+              {property.uploadedPhotos && property.uploadedPhotos.length > 1 && (
+                <div className="property-details-page-carousel-thumbnails">
+                  {property.uploadedPhotos.map((image, index) => (
+                    <button
+                      key={index}
+                      className={`property-details-page-carousel-thumbnail ${index === currentIndex ? "property-details-page-carousel-thumbnail-active" : ""}`}
+                      onClick={() => setCurrentIndex(index)}
+                    >
+                      <img src={image} alt={`Thumbnail ${index}`} />
+                    </button>
+                  ))}
+                </div>
+              )}
             </div>
 
             <ShareModal

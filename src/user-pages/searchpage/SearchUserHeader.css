@@ -5,15 +5,16 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    align-content: center;
-    background-color: var(--primary-color);
-    padding: 0 1rem;
-    border-bottom: 0.00625rem solid var(--primary-color);
-    max-height: 4.84375rem;
-    min-height: 4.84375rem;
+    gap: 1rem;
+    background-color: var(--secondary-color);
+    padding: 0.75rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    max-height: auto;
+    min-height: 70px;
     max-width: none;
     margin: 0;
     z-index: 2;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .search-user-header-userHeaderNavbar {  
@@ -50,14 +51,21 @@
     color: var(--text-color);
 }
 
+.search-user-header-logo-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
 .search-user-header-back-head {
     min-width: fit-content;
     align-items: center;
     letter-spacing: 0.03125rem;
-    font-size: 1.5rem;
-    margin-left: 1rem;
-    color: var(--secondary-color);
-    font-weight: 500;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0;
 }
 
 .search-user-header-back-head i {
@@ -115,46 +123,121 @@
 }
 
 .search-user-header-property-search-bar {
-    width: 95%;
-    margin: 0 1rem;
+    flex: 1;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    align-content: center;
+    gap: 1rem;
+}
+
+.search-user-header-search-input-wrapper {
+    flex: 1;
+    max-width: 450px;
 }
 
 .search-user-header-search-input {
-    width: 100%;
     position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f5;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 24px;
+    padding: 0 1rem;
+    transition: all 0.3s ease;
+}
+
+.search-user-header-search-input:focus-within {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(35, 39, 97, 0.1);
+}
+
+.search-user-header-search-icon {
+    color: #999;
+    font-size: 0.9rem;
+    margin-right: 0.75rem;
+    flex-shrink: 0;
 }
 
 .search-user-header-property-search-bar input {
-    width: 100%;
-    padding: 0.5rem 1.2rem;
-    background-color: var(--secondary-color);
+    flex: 1;
+    padding: 0.75rem 0;
+    background-color: transparent;
     color: var(--text-color);
-    font-size: 1rem;
-    font-weight: 300;
-    letter-spacing: 0.04375rem;
-    border: 0.00625rem solid var(--secondary-color);
-    border-radius: 0.9375rem;
+    font-size: 0.95rem;
+    font-weight: 400;
+    border: none;
+    outline: none;
     transition: all 0.2s;
 }
 
 .search-user-header-property-search-bar input::placeholder {
-    color: #aaaaaa;
-    font-weight: 200;
+    color: #aaa;
+    font-weight: 400;
 }
 
 .search-user-header-property-search-bar input:focus {
     outline: none;
-    border: 0.0625rem solid var(--primary-color);
 }
 
-.search-user-header-search-btns {
+.search-user-header-action-buttons {
     display: flex;
-    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.search-user-header-valuation-btn {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.search-user-header-valuation-btn:hover {
+    background-color: #1a1e4d;
+}
+
+.search-user-header-compare-btn {
+    background-color: white;
+    color: var(--primary-color);
+    border: 1.5px solid #e5e7eb;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.search-user-header-compare-btn:hover {
+    border-color: var(--primary-color);
+}
+
+.search-user-header-right-menu {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.search-user-header-search-btn,
+.search-user-header-clear-btn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-user-header-search-btn:hover,
+.search-user-header-clear-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
 
 .search-user-header-autocomplete-list {
@@ -190,69 +273,47 @@
     }
 
     .search-user-header-navigation-header {
-        display: block;
-        position: relative;
-        align-items: start;
-        align-content: start;
         flex-direction: column;
-        align-items: none;
-        z-index: 1;
+        align-items: flex-start;
+        min-height: auto;
+        padding: 0.75rem 1rem;
+        gap: 0.75rem;
+    }
+
+    .search-user-header-logo-section {
+        width: 100%;
     }
 
     .search-user-header-back-head {
-        width: 100%;
-        font-size: 2.5rem !important;
-        letter-spacing: 0.01875rem;
-        padding-top: 1rem;
-    }
-
-    .search-user-header-back-head i {
-        font-size: 1.2rem;
-    }
-
-    .search-user-header-navigation-header .search-user-header-property-search-bar {
-        width: 100%;
-        margin: 2rem 0;
-        gap: 0;
-    }
-
-    .search-user-header-user > i {
-        border-radius: 50%;
-        color: var(--secondary-color);
-        font-size: 2.4rem;
-        cursor: pointer;
+        font-size: 1.25rem;
         margin: 0;
-        padding: 0;
-    }
-
-    .search-user-header-back-button {
-        margin-right: 0.4375rem;
-        font-weight: 900;
-        cursor: pointer;
     }
 
     .search-user-header-property-search-bar {
-        width: 95%;
-        margin: 1.5rem auto;
-        flex-wrap: wrap;
-    }
-
-    .search-user-header-search-input {
         width: 100%;
-        margin-bottom: 1rem;
+        flex-direction: column;
+        gap: 0.75rem;
     }
 
-    .search-user-header-property-search-bar input {
-        font-size: 1rem;
-        border: 0.00625rem solid #e6e6e6;
+    .search-user-header-search-input-wrapper {
+        width: 100%;
+        max-width: 100%;
     }
 
-    .search-user-header-property-search-bar button {
+    .search-user-header-action-buttons {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+    }
+
+    .search-user-header-valuation-btn,
+    .search-user-header-compare-btn {
         padding: 0.5rem 1rem;
+        font-size: 0.85rem;
     }
 
-    .search-user-header-property-search-bar button i {
-        font-size: 1rem;
-        margin-right: 0.01875rem;
+    .search-user-header-right-menu {
+        width: 100%;
     }
 }

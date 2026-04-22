@@ -21,6 +21,8 @@ function SearchProperty({ handleMarkAsRead, problems, setProblems }) {
   const [placePredictions, setPlacePredictions] = useState([]);
   const [coordinates, setCoordinates] = useState({ lat: -1, lng: -1 });
   const [cityCoordinates, setCityCoordinates] = useState({ lat: -1, lng: -1 });
+  const [viewMode, setViewMode] = useState("grid"); // "grid", "list", or "map"
+  const [activeFilterTab, setActiveFilterTab] = useState("All");
   const radius = 5;
   // No longer need autocompleteServiceRef — using the new static
   // AutocompleteSuggestion.fetchAutocompleteSuggestions() API instead.
@@ -824,30 +826,103 @@ function SearchProperty({ handleMarkAsRead, problems, setProblems }) {
               </div>
             ) : (
               <>
-                <div className="search-property-updates">
-                  <p>
-                    {filteredListings.length} {filterApplied && filters.category}{" "}
-                    Apartments for{" "}
-                    {filterApplied && filters.type ? filters.type : "sale"}
-                    {searched
-                      ? " in " + searched
-                      : searchCity
-                        ? " in " + searchCity
-                        : ""}
-                  </p>
-                  <p>Updated: {formatDate(new Date())}</p>
+                {/* Filter Tabs */}
+                <div className="search-property-filter-tabs">
+                  <div className="search-property-filter-tabs-scroll">
+                    {["All", "Buy", "Sell", "Rent", "Lease", "Commercial", "PG / Co-living"].map((tab) => (
+                      <button
+                        key={tab}
+                        className={`search-property-filter-tab ${activeFilterTab === tab ? "search-property-filter-tab-active" : ""}`}
+                        onClick={() => setActiveFilterTab(tab)}
+                      >
+                        <span className="search-property-filter-tab-icon">
+                          {tab === "All" && <i className="fa-solid fa-home"></i>}
+                          {tab === "Buy" && <i className="fa-solid fa-cart-shopping"></i>}
+                          {tab === "Sell" && <i className="fa-solid fa-tag"></i>}
+                          {tab === "Rent" && <i className="fa-solid fa-key"></i>}
+                          {tab === "Lease" && <i className="fa-solid fa-handshake"></i>}
+                          {tab === "Commercial" && <i className="fa-solid fa-building"></i>}
+                          {tab === "PG / Co-living" && <i className="fa-solid fa-users"></i>}
+                        </span>
+                        {tab}
+                      </button>
+                    ))}
+                  </div>
                 </div>
 
-                <div className="search-property-property-list">
-                  {filteredListings.map((property) => (
-                    <PropertyCard key={property._id} property={property} />
-                  ))}
-
-                  {filteredListings.length === 0 && !loading && (
-                    <div className="search-property-no-results">
-                      <p>No properties found matching your criteria.</p>
-                      <p>Try adjusting your filters or search location.</p>
+                {/* Featured Section */}
+                {filteredListings.filter(p => p.featured).length > 0 && (
+                  <div className="search-property-featured-section">
+                    <div className="search-property-featured-header">
+                      <div className="search-property-featured-icon">
+                        <i className="fa-solid fa-gem"></i>
+                      </div>
+                      <div>
+                        <h3 className="search-property-featured-title">{filteredListings.filter(p => p.featured).length} Featured Properties</h3>
+                        <p className="search-property-featured-subtitle">Hand-picked premium listings with verified details</p>
+                      </div>
                     </div>
+                    <button className="search-property-featured-button">
+                      <i className="fa-solid fa-star"></i> View Featured
+                    </button>
+                  </div>
+                )}
+
+                {/* Updates and View Toggle */}
+                <div className="search-property-updates-header">
+                  <div className="search-property-updates">
+                    <p>
+                      <strong>{filteredListings.length} properties found</strong>
+                    </p>
+                    <p className="search-property-updates-date">Updated: {formatDate(new Date())}</p>
+                  </div>
+
+                  {/* View Toggle Buttons */}
+                  <div className="search-property-view-toggle">
+                    <button
+                      className={`search-property-view-btn ${viewMode === "grid" ? "search-property-view-btn-active" : ""}`}
+                      onClick={() => setViewMode("grid")}
+                      title="Grid View"
+                    >
+                      <i className="fa-solid fa-grip"></i>
+                    </button>
+                    <button
+                      className={`search-property-view-btn ${viewMode === "list" ? "search-property-view-btn-active" : ""}`}
+                      onClick={() => setViewMode("list")}
+                      title="List View"
+                    >
+                      <i className="fa-solid fa-list"></i>
+                    </button>
+                    <button
+                      className={`search-property-view-btn ${viewMode === "map" ? "search-property-view-btn-active" : ""}`}
+                      onClick={() => setViewMode("map")}
+                      title="Map View"
+                    >
+                      <i className="fa-solid fa-map"></i>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Property List based on View Mode */}
+                <div className={`search-property-property-list search-property-${viewMode}-view`}>
+                  {viewMode === "map" ? (
+                    <div className="search-property-map-placeholder">
+                      <i className="fa-solid fa-map"></i>
+                      <p>Map view coming soon</p>
+                    </div>
+                  ) : (
+                    <>
+                      {filteredListings.map((property) => (
+                        <PropertyCard key={property._id} property={property} viewMode={viewMode} />
+                      ))}
+
+                      {filteredListings.length === 0 && !loading && (
+                        <div className="search-property-no-results">
+                          <p>No properties found matching your criteria.</p>
+                          <p>Try adjusting your filters or search location.</p>
+                        </div>
+                      )}
+                    </>
                   )}
                 </div>
               </>
