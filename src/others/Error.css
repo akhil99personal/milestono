@@ -1,0 +1,42 @@
+/* Error404.css */
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--background-color);
+  color: var(--hover-color);
+  text-align: center;
+}
+
+.error-title {
+  font-size: 8rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--primary-color); /* Bright red */
+}
+
+.error-message {
+  font-size: 1.5rem;
+  margin: 10px 0 20px;
+  color: var(--hover-color); /* Darker red for contrast */
+}
+
+.error-back-button {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  background-color: var(--primary-color); /* Bright red */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.error-back-button:hover {
+  background-color: var(--hover-color) /* Darker red for hover effect */
+}

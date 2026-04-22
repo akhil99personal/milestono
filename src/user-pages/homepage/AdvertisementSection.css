@@ -1,0 +1,402 @@
+/* Container Styles */
+.container-home-page-section {
+  padding: 20px 15px;
+  background-color: #f5f5f5;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+/* Header Styles */
+.header-container-home-page-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.header-left-section-home-page-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-left-section-home-page-section p {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-top: -10px;
+}
+
+.header-accent-home-page-section {
+  width: 4px;
+  height: 24px;
+  background-color: #4f46e5;
+  border-radius: 2px;
+  margin-right: 12px;
+}
+
+.heading-home-page-section {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f2937;
+  letter-spacing: -0.5px;
+}
+
+/* Scroll View */
+.scroll-view-home-page-section {
+  display: flex;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  gap: 20px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.scroll-view-home-page-section::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Project Card Styles */
+.project-card-home-page-section {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.project-image-container-home-page-section {
+  position: relative;
+}
+
+.project-image-home-page-section {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project-badge-home-page-section {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #4caf50;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.project-badge-text-home-page-section {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.rating-badge-home-page-section {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 193, 7, 0.9);
+  padding: 4px 8px;
+  border-radius: 20px;
+}
+
+.rating-text-home-page-section {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.project-info-home-page-section {
+  padding: 15px;
+}
+
+.project-title-home-page-section {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1a237e;
+  margin-bottom: 5px;
+}
+
+.location-container-home-page-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.project-location-home-page-section {
+  font-size: 14px;
+  color: #757575;
+}
+
+.project-price-home-page-section {
+  font-size: 14px;
+  color: #1a237e;
+  font-weight: bold;
+}
+
+.project-possession-home-page-section {
+  font-size: 14px;
+  color: #757575;
+  margin-bottom: 10px;
+}
+
+.project-buttons-home-page-section {
+  display: flex;
+  gap: 10px;
+}
+
+.view-button-home-page-section {
+  flex: 1;
+  background-color: #1a237e;
+  color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.inquiry-button-home-page-section {
+  flex: 1;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 12px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+/* Pagination */
+.pagination-container-home-page-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.pagination-dot-home-page-section {
+  height: 8px;
+  width: 8px;
+  border-radius: 4px;
+  background-color: #1e3a8a;
+  margin: 0 4px;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.pagination-dot-home-page-section.active-home-page-section {
+  width: 16px;
+  opacity: 1;
+}
+
+/* See More Button */
+.see-more-container-home-page-section {
+  text-align: right;
+  margin-top: 16px;
+}
+
+.see-more-home-page-section {
+  font-size: 16px;
+  color: #4a4a9c;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Modal */
+.modal-overlay-home-page-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.modal-container-home-page-section {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 500px;
+  max-height: 80vh;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.close-button-home-page-section {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+
+.close-button-home-page-section svg {
+  color: #fff;
+  width: 16px;
+  height: 16px;
+}
+
+.modal-image-container-home-page-section {
+  position: relative;
+}
+
+.modal-image-home-page-section {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.modal-scroll-view-home-page-section {
+  padding: 15px;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.modal-title-home-page-section {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1a237e;
+  margin-bottom: 6px;
+}
+
+.modal-info-row-home-page-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.modal-location-home-page-section {
+  font-size: 14px;
+  color: #757575;
+}
+
+.modal-rating-home-page-section {
+  font-size: 14px;
+  color: #ffc107;
+  font-weight: bold;
+}
+
+.modal-status-home-page-section {
+  font-size: 14px;
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.price-container-home-page-section {
+  display: flex;
+  align-items: center;
+  background-color: rgba(26, 35, 126, 0.05);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.price-label-home-page-section {
+  font-size: 14px;
+  color: #757575;
+  margin-right: 5px;
+}
+
+.price-value-home-page-section {
+  font-size: 16px;
+  color: #1a237e;
+  font-weight: bold;
+}
+
+.possession-container-home-page-section {
+  display: flex;
+  align-items: center;
+  background-color: rgba(76, 175, 80, 0.05);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.possession-label-home-page-section {
+  font-size: 14px;
+  color: #757575;
+  margin-right: 5px;
+}
+
+.possession-value-home-page-section {
+  font-size: 16px;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.modal-description-home-page-section {
+  font-size: 14px;
+  color: #424242;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.modal-buttons-home-page-section {
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+}
+
+.modal-button-home-page-section {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #232761;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-inquiry-button-home-page-section {
+  background-color: #1a237e;
+  color: #fff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .project-card-home-page-section {
+    width: 280px;
+  }
+
+  .modal-container-home-page-section {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card-home-page-section {
+    width: 260px;
+  }
+
+  .project-buttons-home-page-section {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .header-container-home-page-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

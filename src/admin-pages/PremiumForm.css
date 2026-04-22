@@ -1,0 +1,64 @@
+/* Inherited .table-container from admin-global.css for alignment */
+
+.premium-form {
+  padding: 20px;
+}
+
+.premium-form-container {
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.premium-form-header {
+  display: flex;
+  padding: 20px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: larger;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.package-details {
+  margin-bottom: 20px;
+}
+
+.package-details label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.package-details input[type="text"],
+.package-details input[type="number"],
+.package-details select {
+  width: calc(100% - 16px);
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid var(--text-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.submit-button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.submit-button:hover {
+  background-color: var(--hover-color);
+}

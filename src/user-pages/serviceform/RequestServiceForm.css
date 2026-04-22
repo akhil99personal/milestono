@@ -1,0 +1,219 @@
+.request-service-form-request-service {
+  width: 100%;
+  height: 100%;
+  /* background-image: url("../../images/main-bg-2.jpeg"); */
+  /* background-size: 100% 100%; */
+  background-color: var(--background-color);
+}
+
+.request-service-form-property-form {
+  font-family: Arial, sans-serif;
+  border: 0.0625rem solid var(--text-color);
+  padding: 1.25rem;
+  border-radius: 19px;
+  /* border-top-right-radius: 19px;
+  border-top-left-radius: 19px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0; */
+  background-color: var(--secondary-color);
+  max-width: 45rem;
+  margin: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  /* box-shadow: 10px 8px 0px rgb(0, 0, 0,.5); */
+}
+
+.request-service-form-property-form h2{
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.request-service-form-property-form label{
+  font-size: 1.2rem !important;
+  padding-left: .1rem;
+  padding-bottom: .9rem !important;
+}
+
+.request-service-form-property-form input,
+.request-service-form-property-form select,
+.request-service-form-property-form textarea {
+  width: 100%;
+  padding: 1rem 1rem  !important;
+  margin-top: .7125rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 8px !important;
+  box-sizing: border-box;
+}
+
+/* .request-service-form-property-form input::placeholder{
+  color: transparent;
+} */
+
+.request-service-form-servicesform {
+  /* background-image: url("../../images/bg-worker.jpg"); */
+  background-size: 100% 100%;
+  margin-top: 7vmax;
+}
+
+.request-service-form-add-photos {
+  border: 0.125rem dashed #ccc;
+  border-radius: 9px;
+  padding: 1.25rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.request-service-form-add-photos:hover {
+  background-color: #f8f9fa;
+}
+
+.request-service-form-add-photos button {
+  padding: 0.625rem 1.25rem;
+  color: var(--primary-color);
+  border: none;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  background-color: transparent;
+  font-size: 1.25rem;
+  font-weight: bolder;
+}
+
+.request-service-form-drop-zone {
+  min-height: 9.375rem;
+}
+
+.request-service-form-uploaded-photos {
+  margin-top: 1.25rem;
+}
+
+.request-service-form-uploaded-photos ul {
+  list-style: none;
+  padding: 0;
+}
+
+.request-service-form-uploaded-photos ul li {
+  margin-bottom: 0.625rem;
+}
+
+.request-service-form-serviceformgroup {
+  margin-bottom: 0.9375rem;
+}
+
+.request-service-form-serviceformgroup input,
+.request-service-form-serviceformgroup textarea {
+  width: 100%;
+  padding: 0.625rem;
+  border-radius: 0.3125rem;
+  font-size: 1rem;
+  margin-top: 1.125rem;
+}
+
+.request-service-form-serviceformgroup textarea{
+  height: 8rem;
+  resize: vertical;
+}
+
+.request-service-form-serviceformgroup .request-service-form-file-input input[type="file"] {
+  padding: 0.625rem;
+  border-radius: 0.3125rem;
+}
+
+.request-service-form-serviceformgroup.inline {
+  display: flex;
+  justify-content: space-between;
+}
+
+.request-service-form-serviceformgroup.request-service-form-inline input {
+  flex: 1;
+  margin-right: 0.625rem;
+}
+
+.request-service-form-serviceformgroup.request-service-form-inline input:last-child {
+  margin-right: 0;
+}
+
+.request-service-form-serviceformgroup button {
+  border: none;
+  padding: 0.625rem;
+  margin: 0.625rem;
+}
+
+.request-service-form-serviceformgroup.request-service-form-inline-checkbox {
+  display: flex;
+}
+
+.request-service-form-serviceformgroup.request-service-form-inline-checkbox span {
+  margin-left: 0.625rem;
+  color: var(--secondary-color);
+}
+
+.request-service-form-serviceformgroup.request-service-form-center {
+  display: flex;
+  justify-content: center;
+}
+
+.request-service-form-submit-button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 0.625rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 0.3125rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.request-service-form-submit-button:hover {
+  background-color: var(--hover-color);
+}
+
+.request-service-form-serviceformgroup.request-service-form-btns {
+  /* display: flex; */
+  /* justify-content: space-between; */
+  text-align: end;
+}
+
+.request-service-form-green-btn {
+  font-size: 1rem !important;
+  background-color: #3bb43b;
+  color: var(--secondary-color);
+  border-radius: 0.25rem;
+  border: none;
+  margin: 0.3125rem;
+  padding: 25px;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+.request-service-form-red-btn {
+  font-size: 1rem !important;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 0.25rem;
+  border: none;
+  margin: 0.3125rem;
+  /* padding: 0.3125rem 1.25rem; */
+  padding-left: 1.25rem !important;
+  padding-right: 1.25rem !important;
+}
+
+.request-service-form-error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.3125rem;
+  margin-bottom: 0.625rem;
+}
+
+@media screen and (max-width: 48rem) {
+  .request-service-form-property-form {
+    width: 95%;
+  }
+
+  .request-service-form-servicesform {
+    margin-top: 15vmax;
+  }
+}

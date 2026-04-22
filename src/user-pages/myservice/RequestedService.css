@@ -1,0 +1,442 @@
+/* .requested-service-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.requested-service-modal-image {
+  max-width: 12.5rem;
+  max-height: 12.5rem;
+  object-fit: cover;
+}
+
+.requested-service-modal {
+  background: var(--secondary-color);
+  padding: 1.25rem;
+  border-radius: 0.25rem;
+  max-width: 80%;
+  max-height: 80%;
+  overflow: auto;
+}
+
+.requested-service-modal button {
+  margin-bottom: 0.625rem;
+}
+
+.requested-service-red-btn {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 0.25rem;
+  border: none;
+  margin: 0.3125rem;
+  padding: 0.3125rem 0.625rem;
+}
+
+.requested-service-grey-btn {
+  background-color: rgb(139, 139, 139);
+  color: var(--secondary-color);
+  border-radius: 0.25rem;
+  border: none;
+  margin: 0.3125rem;
+  padding: 0.3125rem 0.625rem;
+}
+
+.requested-service-modal-content {
+  background-color: var(--secondary-color);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  width: 90%;
+  max-width: 31.25rem;
+  box-shadow: 0 0.25rem 0.375rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.requested-service-modal-content p {
+  margin: 0 0 1.25rem;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.requested-service-modal-buttons {
+  margin: 0.625rem 0 0;
+  display: flex;
+  justify-content: end;
+}
+
+.requested-service-modal-content button {
+  background-color: #007bff;
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.625rem 1.25rem;
+  margin: 0 0.3125rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  max-width: 45%;
+}
+
+.requested-service-modal-content button:hover {
+  background-color: #0056b3;
+}
+
+.requested-service-modal-content button:last-child {
+  background-color: #6c757d;
+}
+
+.requested-service-modal-content button:last-child:hover {
+  background-color: #5a6268;
+}
+
+.requested-service-my-service-heading {
+  text-align: center;
+  font-size: 1.75rem;
+  color: var(--primary-color);
+}
+
+.requested-service-service-request-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 75rem;
+  padding: 0 0.9375rem;
+}
+
+.requested-service-service-request-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.9375rem;
+  border-bottom: 0.0625rem solid var(--secondary-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--secondary-color);
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.9375rem;
+}
+
+.requested-service-service-request-row:hover {
+  background-color: var(--background-color);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.requested-service-field {
+  flex: 1 1 calc(25% - 1.25rem);
+  margin-right: 0.625rem;
+  margin-bottom: 0.625rem;
+}
+
+.requested-service-field strong {
+  display: block;
+  margin-bottom: 0.3125rem;
+  color: #333;
+}
+
+.requested-service-status-box-list {
+  height: fit-content;
+  padding: 0.625rem;
+  margin: auto;
+  border-radius: 0.3125rem;
+  color: var(--secondary-color);
+  font-weight: bold;
+  text-align: center;
+  align-items: center;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.requested-service-status-box-list:hover {
+  transform: translateY(-0.1875rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.requested-service-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.requested-service-modal-content {
+  background-color: var(--secondary-color);
+  border-radius: 0.5rem;
+  width: 90%;
+  max-width: 31.25rem;
+  padding: 1.25rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.2);
+}
+
+.requested-service-modal-close {
+  position: absolute;
+  top: 0.625rem;
+  right: 0;
+  background: none !important;
+  border: none;
+  font-size: 1.6875rem !important;
+  cursor: pointer;
+  color: var(--text-color) !important;
+}
+
+.requested-service-modal-title {
+  margin-bottom: 1.25rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--text-color);
+  text-align: center;
+}
+
+.requested-service-modal-body {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+}
+
+.requested-service-modal-left,
+.requested-service-modal-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9375rem;
+}
+
+.requested-service-modal-left {
+  width: 30%;
+}
+
+.requested-service-modal-right {
+  width: 70%;
+}
+
+.requested-service-modal-image {
+  width: 100%;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.625rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin: auto;
+}
+
+.requested-service-modal-image img {
+  max-height: 12.5rem;
+  object-fit: cover;
+  max-width: 100%;
+  border-radius: 0.25rem;
+}
+
+.requested-service-status-box {
+  padding: 0.625rem;
+  cursor: pointer;
+  border-radius: 0.3125rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.requested-service-modal-details p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.requested-service-modal-details p strong {
+  color: var(--text-color);
+}
+
+@media screen and (max-width: 48rem) {
+  .requested-service-modal-body {
+    flex-direction: column;
+  }
+
+  .requested-service-modal-left {
+    width: 100%;
+  }
+
+  .requested-service-modal-right {
+    width: 100%;
+  }
+
+  .requested-service-field {
+    flex: 1 1 calc(50% - 1.25rem);
+  }
+
+  .requested-service-status-box {
+    margin-top: 0.9375rem;
+  }
+
+  .requested-service-service-request-row {
+    flex-wrap: wrap;
+  }
+
+  .requested-service-status-box-list {
+    flex: 1 1 100%;
+  }
+} */
+
+
+
+
+
+.requested-service-service-request-list {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.requested-service-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.requested-service-table th,
+.requested-service-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.requested-service-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.requested-service-table tr:hover {
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.requested-service-status-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.requested-service-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.requested-service-modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.requested-service-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.requested-service-modal-title {
+  margin-top: 0;
+  color: #333;
+}
+
+.requested-service-modal-body {
+  display: flex;
+  gap: 20px;
+}
+
+.requested-service-modal-left {
+  flex: 1;
+}
+
+.requested-service-modal-right {
+  flex: 2;
+}
+
+.requested-service-modal-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.requested-service-modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.requested-service-status-box {
+  display: inline-block;
+  padding: 6px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  margin: 4px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.requested-service-modal-details p {
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.requested-service-view-btn {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.requested-service-view-btn:hover {
+  background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+  .requested-service-modal-body {
+    flex-direction: column;
+  }
+  .requested-service-table {
+    display: block;
+    overflow-x: auto;
+  }
+}

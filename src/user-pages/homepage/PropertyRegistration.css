@@ -1,0 +1,184 @@
+/* keep the entire section same i think it suits for all color palletes (some are changed) */
+
+.property-registration {
+  min-width: 1200px;
+  max-width: 1200px;
+  background-color: #fffbf2;
+  padding: 60px 30px;
+  width: max-content;
+  margin: 5vmin auto;
+  border-radius: 19px;
+}
+
+.property-registration-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.property-registration-left-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.property-registration-subtitle {
+  color: #666;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.property-registration-main-heading {
+  font-size: 36px;
+  color: #1a1a4e;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.property-registration-description {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.property-registration-stats-container {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.property-registration-stat-item h2 {
+  font-size: 28px;
+  color: #1a1a4e;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.property-registration-stat-item p {
+  color: #666;
+  font-size: 14px;
+}
+
+.property-registration-cta-button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.property-registration-cta-button:hover {
+  background-color: var(--hover-color);
+}
+
+.property-registration-whatsapp-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  font-size: 14px;
+}
+
+.property-registration-whatsapp-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.property-registration-whatsapp-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.property-registration-right-content {
+  flex: 1;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+.property-registration-right-content img {
+  transition: all 0.3s ease;
+}
+
+.property-registration-right-content img:hover {
+  scale: 1.05;
+}
+
+.property-registration-hero-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+@media (max-width: 786px) {
+  .property-registration {
+    width: fit-content;
+    min-width: 100%;
+    max-width: 100%;
+    align-items: center;
+    padding: 60px 0;
+    margin: 0;
+  }
+
+  .property-registration-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .property-registration-left-content {
+    max-width: 95%;
+    text-align: center;
+  }
+
+  .property-registration-stats-container {
+    gap: 10px;
+  }
+
+  .property-registration-stat-item {
+    width: 150px;
+  }
+
+  .property-registration-stat-item h2 {
+    font-size: 24px;
+  }
+
+  .property-registration-stat-item p {
+    font-size: 10px;
+  }
+
+  .property-registration-cta-button {
+    padding: 8px 20px;
+  }
+
+  .property-registration-right-content {
+    display: none;
+    flex: 1;
+    max-width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .property-registration-main-heading {
+    font-size: 28px;
+  }
+
+  .property-registration-whatsapp-section {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .property-registration-subtitle {
+    font-size: 1rem;
+  }
+}

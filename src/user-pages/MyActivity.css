@@ -1,0 +1,375 @@
+.my-activities {
+  font-family: Arial, sans-serif;
+  background-color: var(--background-color);
+  padding-top: 4rem;
+}
+
+.tabs {
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 3rem;
+  margin-bottom: 20px;
+  gap: 0px;
+}
+
+.tab-button {
+  padding: 10px;
+  font-size: 1.3rem;
+  background: transparent;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.tab-button:hover,
+.tab-button.active {
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.tab-content {
+  padding: 1rem 0;
+  max-width: 1000px;
+  margin: 0 auto;
+  /* background: #f9f9f9;
+  border: 1px solid #ddd; */
+  border-radius: 5px;
+}
+
+.tab-section {
+  display: none;
+}
+
+.tab-section.active {
+  display: block;
+}
+
+/*No data found*/
+
+.my-activity-nofound {
+  width: 75%;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.my-activity-nofound img {
+  width: 30%;
+  height: 30%;
+}
+
+.my-activity-nofound h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+.my-activity-nofound p {
+  font-size: 1rem;
+  margin: auto;
+  width: 75%;
+}
+
+/* RecentSearches  */
+
+.recent-searches {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+.search-date-section {
+  margin-bottom: 20px;
+}
+
+.search-date-section h3 {
+  font-size: 1.3rem;
+  font-weight: bolder;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+}
+
+.search-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  cursor: pointer;
+}
+
+.search-item {
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+  border: 1px solid #e1e1e1;
+  padding: 2rem 15px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+
+.search-item:hover {
+  background: var(--background-color);
+}
+
+/* .search-item:hover .search-icon{
+    transform: translateX(10px);
+}
+
+.search-item:hover .search-text{
+    transform: translateX(10px);
+} */
+
+.search-item:hover .search-arrow {
+  transform: translateX(-20px);
+}
+
+.search-icon {
+  margin: auto 0;
+  margin-right: 10px;
+  transition: all 0.3s;
+}
+
+.search-text {
+  flex: 1;
+  font-size: 1rem;
+  color: var(--text-color);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.search-arrow {
+  font-size: 14px;
+  color: var(--text-color);
+  margin: auto 0;
+  transition: all 0.3s;
+}
+
+/* Viewed */
+
+.view-properties-section h3 {
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.view-properties-section p {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+.view-properties-property-lists {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+  gap: 30px;
+}
+
+.view-properties-property {
+  min-width: 250px;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.view-properties-property img {
+  border-radius: 9px;
+}
+
+/* Shortlisted.css */
+
+.shortlisted-container {
+  font-family: "Roboto", sans-serif;
+  margin: 0px auto;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.shortlisted-header {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 40px;
+}
+
+.shortlisted-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.shortlisted-card {
+  background: var(--secondary-color);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.shortlisted-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.property-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.property-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.property-location,
+.date-added {
+  font-size: 14px;
+  color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+.property-price {
+  font-size: 16px;
+  font-weight: bold;
+  /* color: #38a169; */
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background: var(--secondary-color);
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 8px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+.primary-btn {
+  background-color: #34c477;
+  color: var(--secondary-color);
+}
+
+.primary-btn:hover {
+  background-color: #38a169;
+}
+
+.secondary-btn {
+  background-color: rgb(255, 51, 51);
+  color: var(--secondary-color);
+}
+
+.secondary-btn:hover {
+  background-color: var(--hover-color);
+}
+
+/* Contacted.css */
+
+.contacted-container {
+  font-family: "Roboto", sans-serif;
+  margin: 0px auto;
+  padding: 20px;
+  background: var(--secondary-color);
+}
+
+.contacted-header {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--text-color);
+  margin-bottom: 40px;
+}
+
+.contacted-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.contacted-card {
+  display: flex;
+  background: var(--background-color);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.contacted-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contacted-card-content{
+    flex: 1;
+}
+
+.property-image {
+  flex: 0.5;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.property-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 5px;
+}
+
+.property-location,
+.date-contacted {
+  font-size: 14px;
+  color: #4a5568;
+  margin-bottom: 5px;
+}
+
+.contact-status {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.contact-status.awaiting-response {
+  color: #f59e0b;
+}
+
+.contact-status.responded {
+  color: #38a169;
+}
+
+.contact-status.no-response {
+  color: #e53e3e;
+}
+
+.contact-status.in-progress {
+  color: #2563eb;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}

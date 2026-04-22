@@ -1,0 +1,258 @@
+.search-user-header-navigation-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    background-color: var(--primary-color);
+    padding: 0 1rem;
+    border-bottom: 0.00625rem solid var(--primary-color);
+    max-height: 4.84375rem;
+    min-height: 4.84375rem;
+    max-width: none;
+    margin: 0;
+    z-index: 2;
+}
+
+.search-user-header-userHeaderNavbar {  
+    display: flex;
+    width: auto;
+    height: auto;
+    align-items: center;
+}
+
+.search-user-header-navigation-header .search-user-header-property-search-bar {
+    gap: 1.5625rem;
+    z-index: -1 !important;
+}
+
+.search-user-header-navigation-header .search-user-header-userProfileNavbar {
+    margin: 0 0.625rem;
+    margin-top: 0.25rem;
+}
+
+.search-user-header-navigation-header .search-user-header-post-button {
+    margin: auto 0.75rem;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 0.1rem;
+    border-radius: 0.5625rem;
+    font-size: 1rem;
+    border: solid white;
+    transition: all 0.3s ease;
+}
+
+.search-user-header-navigation-header .search-user-header-post-button:hover {
+    border: solid var(--secondary-color);
+    scale: 1.05;
+    color: var(--text-color);
+}
+
+.search-user-header-back-head {
+    min-width: fit-content;
+    align-items: center;
+    letter-spacing: 0.03125rem;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.search-user-header-back-head i {
+    margin-right: 0.4375rem;
+    font-size: 1.2rem;
+}
+
+.search-user-header-user-icon {
+    background: var(--text-color);
+}
+
+.search-user-header-user > i {
+    background-color: transparent;
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.search-user-header-back-button {
+    margin-right: 0.4375rem;
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.search-user-header-red-text {
+    color: var(--primary-color);
+}
+
+.search-user-header-button {
+    padding: 0.48rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-weight: 300;
+    letter-spacing: 0.05rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.9375rem;
+    transition: all 0.3s;
+    white-space: nowrap;
+    margin: 0.3125rem;
+}
+
+.search-user-header-button i {
+    font-size: 1rem;
+    margin-right: 0.01875rem;
+}
+
+.search-user-header-button:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 0.0625rem solid var(--primary-color);
+}
+
+.search-user-header-property-search-bar {
+    width: 95%;
+    margin: 0 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.search-user-header-search-input {
+    width: 100%;
+    position: relative;
+}
+
+.search-user-header-property-search-bar input {
+    width: 100%;
+    padding: 0.5rem 1.2rem;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.04375rem;
+    border: 0.00625rem solid var(--secondary-color);
+    border-radius: 0.9375rem;
+    transition: all 0.2s;
+}
+
+.search-user-header-property-search-bar input::placeholder {
+    color: #aaaaaa;
+    font-weight: 200;
+}
+
+.search-user-header-property-search-bar input:focus {
+    outline: none;
+    border: 0.0625rem solid var(--primary-color);
+}
+
+.search-user-header-search-btns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-user-header-autocomplete-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 12.5rem;
+    overflow-y: auto;
+    background-color: var(--secondary-color);
+    border: 0.0625rem solid #ccc;
+    border-top: none;
+    border-radius: 0 0 0.25rem 0.25rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.search-user-header-autocomplete-list li {
+    padding: 0.625rem;
+    cursor: pointer;
+}
+
+.search-user-header-autocomplete-list li:hover {
+    background-color: var(--background-color);
+}
+
+@media (max-width: 48rem) {
+    .search-user-header-userHeaderNavbar {
+        display: none;
+    }
+
+    .search-user-header-navigation-header {
+        display: block;
+        position: relative;
+        align-items: start;
+        align-content: start;
+        flex-direction: column;
+        align-items: none;
+        z-index: 1;
+    }
+
+    .search-user-header-back-head {
+        width: 100%;
+        font-size: 2.5rem !important;
+        letter-spacing: 0.01875rem;
+        padding-top: 1rem;
+    }
+
+    .search-user-header-back-head i {
+        font-size: 1.2rem;
+    }
+
+    .search-user-header-navigation-header .search-user-header-property-search-bar {
+        width: 100%;
+        margin: 2rem 0;
+        gap: 0;
+    }
+
+    .search-user-header-user > i {
+        border-radius: 50%;
+        color: var(--secondary-color);
+        font-size: 2.4rem;
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
+    }
+
+    .search-user-header-back-button {
+        margin-right: 0.4375rem;
+        font-weight: 900;
+        cursor: pointer;
+    }
+
+    .search-user-header-property-search-bar {
+        width: 95%;
+        margin: 1.5rem auto;
+        flex-wrap: wrap;
+    }
+
+    .search-user-header-search-input {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .search-user-header-property-search-bar input {
+        font-size: 1rem;
+        border: 0.00625rem solid #e6e6e6;
+    }
+
+    .search-user-header-property-search-bar button {
+        padding: 0.5rem 1rem;
+    }
+
+    .search-user-header-property-search-bar button i {
+        font-size: 1rem;
+        margin-right: 0.01875rem;
+    }
+}

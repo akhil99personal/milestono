@@ -1,0 +1,126 @@
+.project-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.project-form input,
+.project-form textarea,
+.project-form button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--text-color);
+  border-radius: 4px;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.project-form-radio-group{
+    display: flex;
+    width: 50%;
+    flex: 1;
+    margin: 1rem 0;
+}
+
+.project-form-radio-group input{
+    width: 25px;
+    margin: auto 0;
+}
+
+.project-form button {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.project-form button:hover {
+  background-color: var(--hover-color);
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding-top: 2rem;
+}
+
+.project-card {
+  background: linear-gradient(135deg, var(--secondary-color), var(--background-color));
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  margin: 15px 0;
+  font-size: 22px;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.project-card p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.project-card p.price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.project-card button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.project-card button:first-child {
+  background-color: lightgrey;
+  color: var(--text-color);
+  border-top-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.project-card button:first-child:hover {
+  background-color: rgb(188, 182, 182);
+}
+
+.project-card button:last-child {
+  background-color: #dc3545;
+  color: var(--secondary-color);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+.project-card button:last-child:hover {
+  background-color: var(--hover-color);
+}

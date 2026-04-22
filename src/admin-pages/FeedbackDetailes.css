@@ -1,0 +1,80 @@
+.admin-accept-btn {
+  background-color: #38c738;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.admin-decline-btn {
+  background-color: red;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.status-message-accepted {
+  color: #38c738;
+}
+
+.status-message-declined {
+  color: #ee2f2f;
+}
+
+.pagination {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-button {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  background: var(--secondary-color);
+  cursor: pointer;
+}
+
+.page-button.active {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.page-button.prev-next {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.page-button:disabled {
+  opacity: 0.5;
+  color: var(--text-color);
+  cursor: not-allowed;
+}
+
+.pagination-controls {
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagination-controls label {
+  font-size: 14px;
+}
+
+.custom-rows-input {
+  margin: 10px 0;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

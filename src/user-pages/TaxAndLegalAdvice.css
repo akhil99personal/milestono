@@ -1,0 +1,345 @@
+/* Root Styling */
+.tax-legal-container {
+  font-family: "Arial", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* Hero Section */
+.tax-legal-hero-section {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  text-align: center;
+  padding: 50px 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.tax-legal-hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.tax-legal-hero-description {
+  margin: 10px 0 20px;
+  font-size: 1.2rem;
+}
+
+.tax-legal-cta-button {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.tax-legal-cta-button:hover {
+  transform: scale(1.1);
+  background-color: var(--hover-color);
+}
+
+/* Services Section */
+.tax-legal-services-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.tax-legal-section-title {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
+.tax-legal-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.tax-legal-service-card {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  animation: scaleUp 0.8s ease;
+}
+
+.tax-legal-service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tax-legal-service-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+/* Testimonials Section */
+.tax-legal-testimonials-section {
+  background: linear-gradient(120deg, #ffffff, var(--primary-color));
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.tax-legal-testimonial-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.tax-legal-testimonial-card {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 20px;
+  flex: 0 0 300px;
+  scroll-snap-align: start;
+  animation: slideIn 0.8s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Work Process Section */
+.tax-legal-work-process-section {
+  padding: 50px 20px;
+  background-color: var(--background-color);
+}
+
+.tax-legal-work-process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  text-align: center;
+}
+
+.tax-legal-work-step {
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 20px;
+  background-color: var(--secondary-color);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.tax-legal-work-step:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Blog Section */
+.tax-legal-blog-section {
+  padding: 50px 20px;
+  background: linear-gradient(120deg, var(--primary-color), #ffffff);
+}
+
+.tax-legal-blog-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.tax-legal-blog-card {
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 20px;
+  min-width: 300px;
+  scroll-snap-align: start;
+  background-color: var(--secondary-color);
+}
+
+.tax-legal-read-more {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.tax-legal-3s ease;
+}
+
+.tax-legal-read-more:hover {
+  color: var(--hover-color);
+}
+
+/* General Styling */
+.tax-legal-section-title {
+  font-size: 2.4rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tax-legal-section-description {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tax-legal-cta-button {
+  display: inline-block;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tax-legal-cta-button:hover {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+/* Property Tax Section */
+.tax-legal-property-tax-section {
+  background-color: var(--secondary-color);
+  padding: 40px 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.tax-legal-tax-points li {
+  list-style: none;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+/* Legal Compliance Section */
+.tax-legal-legal-compliance-section {
+  background-color: var(--secondary-color);
+  padding: 40px 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.tax-legal-checklist-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tax-legal-checklist-item {
+  flex: 0 1 200px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: var(--secondary-color);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.tax-legal-checklist-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tax-legal-checklist-item img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+/* Tax Benefits Section */
+.tax-legal-home-loan-benefits-section {
+  background-color: var(--secondary-color);
+  padding: 40px 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.tax-legal-benefits-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tax-legal-benefit-card {
+  flex: 0 1 200px;
+  background-color: var(--secondary-color);
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.tax-legal-benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tax-legal-benefit-card h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.tax-legal-emoji {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Keyframes for Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

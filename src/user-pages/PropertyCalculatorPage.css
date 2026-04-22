@@ -1,0 +1,124 @@
+/* General Styling */
+.property-calculator {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 20px;
+    max-width: 600px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  /* Hero Section */
+  .hero {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    color: var(--hover-color);
+    margin-top: 10px;
+  }
+  
+  /* Form Styling */
+  .form {
+    margin-bottom: 30px;
+  }
+  
+  .label {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px rgba(179, 0, 0, 0.5);
+  }
+  
+  .calculate-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .calculate-btn:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-3px);
+  }
+  
+  /* Result Section */
+  .result {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .result-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: var(--text-color);
+  }
+  
+  .document {
+    padding: 20px;
+    background-color: var(--secondary-color);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    animation: fadeInUp 0.8s ease-in-out;
+  }
+  
+  .document p {
+    margin: 8px 0;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

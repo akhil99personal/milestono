@@ -1,0 +1,119 @@
+@import url("../AgentsPage.css");
+
+/* Homepage section specific styles */
+.agents-homepage-section {
+  position: relative;
+  padding: 60px 0;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.agents-homepage-header {
+  margin-bottom: 20px;
+}
+
+.agents-homepage-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #232761;
+  margin-bottom: 10px;
+}
+
+.agents-homepage-subtitle {
+  font-size: 1rem;
+  margin-top: -10px;
+  font-weight: 400;
+  color: #333;
+  max-width: 600px;
+}
+
+.agents-homepage-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  padding: 20px 0;
+  scroll-snap-type: x mandatory;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.agents-homepage-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.agents-homepage-card-container {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  padding-left: 5px;
+  padding-bottom: 10px;
+}
+
+.agents-homepage-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  flex-direction: column;
+}
+
+.agents-homepage-dots {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.agents-homepage-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ddd;
+  margin: 0 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.agents-homepage-dot.active {
+  background-color: #232761;
+  transform: scale(1.2);
+}
+
+.agents-homepage-see-more {
+  background-color: #232761;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.agents-homepage-see-more:hover {
+  background-color: #1a1e4d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .agents-homepage-section {
+    padding: 40px 20px;
+  }
+
+  .agents-homepage-title {
+    font-size: 24px;
+  }
+
+  .agents-homepage-subtitle {
+    font-size: 14px;
+  }
+
+  .agents-homepage-see-more {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

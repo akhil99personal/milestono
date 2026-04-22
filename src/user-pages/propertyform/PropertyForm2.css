@@ -1,0 +1,139 @@
+.property-form-2-property-form-heading {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-bottom: 0.1875rem;
+}
+
+.property-form-2-property-form-heading2 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.625rem;
+}
+
+.property-form-2-category {
+  margin-bottom: 0.625rem;
+}
+
+.property-form-2-category-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.3125rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.property-form-2-options {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.3125rem;
+}
+
+.property-form-2-option {
+  background-color: #ffcccc;
+  color: var(--text-color);
+  padding: 0.3125rem 0.625rem;
+  margin-right: 0.625rem;
+  margin-bottom: 0.625rem;
+  border-radius: 0.1875rem;
+  cursor: pointer;
+}
+
+.property-form-2-selected {
+  background-color: #ff6666;
+  color: var(--secondary-color);
+}
+
+.property-form-2-selected-options {
+  margin-top: 0.625rem;
+}
+
+.property-form-2-selected-option {
+  background-color: #ffcccc;
+  color: var(--text-color);
+  padding: 0.3125rem 0.625rem;
+  margin-right: 0.3125rem;
+  margin-bottom: 0.3125rem;
+  border-radius: 0.1875rem;
+  display: inline-block;
+}
+
+.property-form-2-remove-option {
+  margin-left: 0.3125rem;
+  cursor: pointer;
+}
+
+.property-form-2-next-button {
+  background-color: #ff6666;
+  color: var(--secondary-color);
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 0.1875rem;
+  cursor: pointer;
+  display: block;
+  margin: 1.25rem auto;
+}
+
+.property-form-2-next-button:hover {
+  background-color: #ff6666;
+}
+
+.property-form-2-property-info-section button {
+  color: #ff6666;
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 0.1875rem;
+  cursor: pointer;
+  margin-top: 1.25rem;
+}
+
+.property-form-2-checkbox-label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.9375rem;
+}
+
+.property-form-2-checkbox-label input {
+  width: fit-content !important;
+  margin-right: 0.7rem !important;
+}
+
+.property-form-2-circle-options {
+  display: flex;
+}
+
+.property-form-2-circle-options label {
+  display: inline-block;
+  margin-right: 0.625rem;
+}
+
+.property-form-2-circle-options input[type="radio"] {
+  display: none;
+}
+
+.property-form-2-circle-options label {
+  width: 1.875rem;
+  height: 1.875rem;
+  border-radius: 50%;
+  border: 0.125rem solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.property-form-2-circle-options input[type="radio"]:checked + label {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.property-form-2-map-section {
+  margin: 1.25rem 0;
+}
+
+.property-form-2-error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.3125rem;
+  margin-bottom: 0.625rem;
+}

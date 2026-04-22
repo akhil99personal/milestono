@@ -1,0 +1,6 @@
+/* All standard table, modal, and filter layout styles are now inherited globally from admin-global.css */
+
+.accepeted-serviceman {
+  color: #16a34a;
+  font-weight: 600;
+}

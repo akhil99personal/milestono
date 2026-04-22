@@ -1,0 +1,254 @@
+.getintouch-hero-bg {
+  background-color: var(--background-color);
+}
+
+#getintouch-hero-header {
+  background-size: cover;
+  background-position: center;
+  cursor: default;
+  border-bottom-left-radius: 75px;
+  border-bottom-right-radius: 75px;
+  background-color: var(--background-color);
+}
+
+/*getintouch-hero section start*/
+.getintouch-hero {
+  display: flex;
+  background-color: #17171786; 
+  /* Do not change here */
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  padding-top: 3rem;
+  padding-left: 12rem;
+  padding-bottom: 15rem;
+  border-bottom-left-radius: 75px;
+  border-bottom-right-radius: 75px;
+}
+
+.getintouch-hero-content {
+  margin-top: 150px;
+  margin-left: 20px;
+}
+
+.getintouch-hero-content h1 {
+  font-size: 3rem;
+  font-weight: 500;
+  max-width: 60%;
+  color: var(--secondary-color);
+  line-height: 1.2;
+}
+
+.getintouch-hero-content h2 {
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--background-color);
+  line-height: 1.2;
+}
+
+/*getintouch-hero section end*/
+
+.doubts.getintouchdoubts {
+  background-color: var(--background-color);
+  text-align: center;
+  padding: 2rem 2rem;
+  margin: 12rem 8rem;
+  border-radius: 22px;
+}
+
+/*#reachus section start*/
+.reach-us {
+  background-color: var(--background-color);
+  padding: 5rem 6rem;
+  padding-bottom: 10rem;
+  padding-right: 0;
+  font-family: Arial, sans-serif;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.reach-us-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.reach-us h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.reach-us-content {
+  display: flex;
+}
+
+.reach-us-contact-info {
+  width: 45%;
+}
+
+.reach-us-info-block {
+  margin-bottom: 4rem;
+}
+
+.reach-us h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  line-height: 0.5;
+}
+
+.reach-us p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.reach-us-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reach-us-form-row {
+  display: flex;
+  gap: 40px;
+}
+
+.reach-us-input {
+  width: 230px;
+  height: 20px;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.reach-us select {
+  width: 240px;
+  height: 55px;
+}
+
+.reach-us input,
+.reach-us select,
+.reach-us textarea {
+  padding: 15px;
+  border: none;
+  border-radius: 9px;
+  font-size: 16px;
+  color: #aaaa;
+}
+
+.reach-us input::placeholder,
+.reach-us select::placeholder,
+.reach-us textarea::placeholder {
+  color: #aaaa;
+}
+
+.reach-us select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23aaaaaa' d='M10.293 3.293L6 7.586 1.707 3.293A1 1 0 00.293 4.707l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+}
+
+.reach-us textarea {
+  height: 100px;
+  resize: none;
+  border-radius: 9px;
+}
+
+.reach-us-content button {
+  font-size: 16px;
+  padding: 18px 0px;
+  margin-top: 25px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/*#reachus section end*/
+
+@media (max-width: 786px) {
+  /*# getintouch-hero start*/
+
+  .getintouch-hero {
+    padding-top: 3rem;
+    padding-left: 0rem;
+    padding-right: 2rem;
+    padding-bottom: 10rem;
+    margin-bottom: 2rem;
+    border-bottom-left-radius: 75px;
+    border-bottom-right-radius: 75px;
+  }
+
+  .getintouch-hero-content {
+    margin-top: 30px;
+  }
+
+  .getintouch-hero-content h1 {
+    font-size: 1.5rem;
+    line-height: 1.4;
+    max-width: 100%;
+  }
+
+  /*# getintouch-hero end*/
+
+  /*# reachus section start*/
+  .reach-us {
+    padding: 4rem 0;
+    margin: 0;
+    border-bottom-left-radius: 29px;
+    border-bottom-right-radius: 29px;
+  }
+
+  .reach-us-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+  }
+
+  .reach-us-contact-info {
+    width: 100%;
+    padding-bottom: 2rem;
+  }
+
+  .reach-us-info-block {
+    margin-bottom: 2rem;
+  }
+
+  .reach-us-form-row {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .reach-us input {
+    width: auto;
+    margin-bottom: 1rem;
+  }
+
+  .reach-us select {
+    width: auto;
+    margin-bottom: 1rem;
+  }
+
+  /*# reachus section end*/
+
+  .doubts.getintouchdoubts {
+    background-color: var(--background-color);
+    text-align: center;
+    padding: 2rem 2rem;
+    margin: 5rem 1rem;
+    border-radius: 22px;
+  }
+}

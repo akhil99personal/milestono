@@ -1,0 +1,1140 @@
+/* Base styles */
+.agents-page-agents-container {
+  position: relative;
+  padding-top: 90px;
+  padding-bottom: 80px;
+  min-height: 100vh;
+}
+
+/* Header styles */
+.agents-page-sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  z-index: 1000;
+}
+
+.agents-page-header-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.agents-page-header-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* Improved search container styles */
+.agents-page-search-container {
+  padding: 24px;
+  background-color: #fff;
+  /* border-bottom: 1px solid #eee; */
+  /* margin-bottom: 15px; */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.agents-page-search-input-container {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  padding: 0 15px;
+  height: 54px;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.agents-page-search-input-container:focus-within {
+  border-color: #232761;
+  box-shadow: 0 0 0 2px rgba(35, 39, 97, 0.1);
+}
+
+.agents-page-search-icon {
+  margin-right: 12px;
+  font-size: 20px;
+  color: #666;
+}
+
+.agents-page-search-input {
+  flex: 1;
+  font-size: 16px;
+  color: #333;
+  border: none;
+  background: transparent;
+  outline: none;
+  height: 100%;
+}
+
+.agents-page-clear-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.agents-page-clear-button:hover {
+  color: #232761;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.agents-page-filter-container {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.agents-page-filter-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  margin-right: 12px;
+}
+
+.agents-page-filter-options {
+  display: flex;
+}
+
+.agents-page-filter-option {
+  padding: 8px 16px;
+  border-radius: 20px;
+  margin-right: 10px;
+  background-color: #f2f2f2;
+  border: none;
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.agents-page-filter-option:hover {
+  background-color: #e6e6e6;
+}
+
+.agents-page-filter-option-active {
+  background-color: #232761;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(35, 39, 97, 0.2);
+}
+
+/* Results info styles */
+.agents-page-results-info {
+  padding: 10px 20px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.agents-page-results-text {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Agents grid styles */
+.agents-page-agents-grid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.agents-page-card-container {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .agents-page-card-container {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .agents-page-card-container {
+    width: 33.333%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .agents-page-card-container {
+    width: 25%;
+  }
+}
+
+.agents-page-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.agents-page-card-header {
+  position: relative;
+}
+
+.agents-page-agent-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+/* Improved badge styles */
+.agents-page-featured-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(135deg, #ffc107, #ff9800);
+  border-radius: 20px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(255, 193, 7, 0.4);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+}
+
+.agents-page-agent-logo{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  border-radius: 20px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  min-width: 90px;
+  max-width: 90px;
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+}
+
+.agents-page-featured-icon {
+  margin-right: 4px;
+  font-size: 14px;
+}
+
+.agents-page-featured-text {
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.agents-page-verified-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #4caf50, #2e7d32);
+  border-radius: 20px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 2;
+}
+
+.agents-page-verified-icon {
+  margin-right: 4px;
+  font-size: 14px;
+}
+
+.agents-page-verified-text {
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.agents-page-card-body {
+  padding: 15px;
+}
+
+.agents-page-card-body-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.agents-page-agent-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.agents-page-company-container {
+  display: flex;
+  align-items: center;
+}
+
+.agents-page-company-icon {
+  margin-right: 6px;
+  font-size: 14px;
+  color: #666;
+}
+
+.agents-page-company-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.agents-page-rating-container {
+  display: flex;
+  align-items: center;
+}
+
+.agents-page-star {
+  font-size: 14px;
+  color: #ccc;
+  margin-right: 2px;
+}
+
+.agents-page-star.filled {
+  color: #ffd700;
+}
+
+.agents-page-rating-text-agent {
+  font-size: 12px;
+  color: #666;
+  margin-left: 4px;
+}
+
+.agents-page-stats-container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+
+.agents-page-agent-stat-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.agents-page-agent-stat-value {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.agents-page-agent-stat-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.agents-page-info-section {
+  margin-bottom: 15px;
+}
+
+.agents-page-info-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.agents-page-info-icon {
+  margin-right: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+.agents-page-info-text {
+  font-size: 14px;
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.agents-page-contact-button {
+  background-color: #1a1e4d;
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Footer styles */
+.agents-page-sticky-footer {
+  display: none;
+}
+
+/* Button pagination styles */
+.agents-page-pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0;
+  padding: 0 20px;
+}
+
+.agents-page-pagination-numbers {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.agents-page-page-number {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5px;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.agents-page-page-number:hover {
+  background-color: #e6e6e6;
+}
+
+.agents-page-page-number.active-page {
+  background-color: #232761;
+  color: #fff;
+  box-shadow: 0 2px 5px rgba(35, 39, 97, 0.2);
+}
+
+.agents-page-pagination-button {
+  padding: 0 15px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #f2f2f2;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.agents-page-pagination-button:hover {
+  background-color: #e6e6e6;
+}
+
+.agents-page-pagination-button-disabled {
+  background-color: #f8f8f8;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Hide desktop pagination on mobile */
+@media (max-width: 768px) {
+  .agents-page-pagination-container {
+    display: none;
+  }
+  .agents-page-sticky-footer {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-top: 1px solid #eee;
+    z-index: 1000;
+  }
+}
+
+.agents-page-pagination-info {
+  text-align: center;
+}
+
+.agents-page-pagination-text {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Modal styles */
+.agents-page-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.agents-page-modal-content {
+  background-color: #fff;
+  border-radius: 24px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 85vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.agents-page-modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 20px 15px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+
+.agents-page-modal-header-line {
+  width: 40px;
+  height: 4px;
+  background-color: #ddd;
+  border-radius: 2px;
+  margin-bottom: 16px;
+}
+
+.agents-page-close-button {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: #f5f5f5;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.agents-page-modal-body {
+  padding: 20px;
+  overflow-y: auto;
+  scrollbar-width: none;
+  max-height: calc(85vh - 70px);
+}
+
+.agents-page-modal-agent-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.agents-page-modal-agent-image {
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  border: 2px solid #fff;
+  object-fit: cover;
+}
+
+.agents-page-modal-agent-details {
+  margin-left: 15px;
+  flex: 1;
+}
+
+.agents-page-modal-agent-name {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 2px;
+  letter-spacing: -0.5px;
+}
+
+.agents-page-modal-agent-company {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.agents-page-modal-agent-rating {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.agents-page-modal-rating-text {
+  font-size: 12px;
+  color: #666;
+  margin-left: 4px;
+}
+
+.agents-page-modal-section {
+  margin-bottom: 24px;
+}
+
+.agents-page-modal-section-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.agents-page-about-text {
+  font-size: 14px;
+  color: #666;
+  line-height: 22px;
+  margin-bottom: 16px;
+}
+
+.agents-page-tab-container {
+  display: flex;
+  margin: 10px 0;
+}
+
+.agents-page-tab-button {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 5px;
+  background: none;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+
+.agents-page-active-tab-button {
+  background-color: #232761;
+  border-color: #232761;
+  color: #fff;
+}
+
+.agents-page-scroll-container {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 10px 0;
+}
+
+/* Property card styles */
+.agents-page-property-card {
+  width: 300px;
+  background-color: white;
+  border-radius: 8px;
+  margin-right: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #eee;
+  flex-shrink: 0;
+}
+
+.agents-page-property-image {
+  width: 100%;
+  height: 120px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: #f5f5f5;
+  object-fit: cover;
+}
+
+.agents-page-card-content {
+  padding: 16px;
+}
+
+.agents-page-property-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.agents-page-location-text {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.agents-page-price-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.agents-page-price-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: green;
+}
+
+.agents-page-type-text {
+  font-size: 14px;
+  color: #666;
+  margin-left: 4px;
+}
+
+.agents-page-button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.agents-page-save-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: 1px solid #2e3192;
+  background: none;
+  color: #2e3192;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.agents-page-view-button-agent {
+  padding: 8px 16px;
+  border-radius: 4px;
+  background-color: #2e3192;
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Project card styles */
+.agents-page-project-card {
+  background-color: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-right: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  flex-shrink: 0;
+}
+
+.agents-page-project-image-container {
+  position: relative;
+  width: 100%;
+  height: 180px;
+}
+
+.agents-page-project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.agents-page-image-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+}
+
+.agents-page-project-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #4caf50;
+  padding: 5px 10px;
+  border-radius: 20px;
+}
+
+.agents-page-project-badge-text {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.agents-page-rating-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 193, 7, 0.9);
+  padding: 4px 8px;
+  border-radius: 20px;
+}
+
+.agents-page-rating-text {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.agents-page-project-info {
+  padding: 15px;
+}
+
+.agents-page-project-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #1a237e;
+  margin-bottom: 5px;
+}
+
+.agents-page-project-location {
+  font-size: 14px;
+  color: #757575;
+}
+
+.agents-page-project-price {
+  font-size: 14px;
+  color: #1a237e;
+  font-weight: bold;
+}
+
+.agents-page-project-possession {
+  font-size: 14px;
+  color: #757575;
+  margin-bottom: 10px;
+}
+
+.agents-page-project-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.agents-page-view-button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #1a237e;
+}
+
+.agents-page-inquiry-button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #4caf50;
+}
+
+/* Contact options styles */
+.agents-page-contact-options {
+  margin-bottom: 10px;
+}
+
+.agents-page-contact-option {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.agents-page-contact-option-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.agents-page-phone-icon {
+  background: linear-gradient(to right, #4caf50, #2e7d32);
+}
+
+.agents-page-email-icon {
+  background: linear-gradient(to right, #2196f3, #0d47a1);
+}
+
+.agents-page-address-icon {
+  background: linear-gradient(to right, #ff9800, #e65100);
+}
+
+.agents-page-contact-option-details {
+  flex: 1;
+}
+
+.agents-page-contact-option-label {
+  font-size: 12px;
+  color: #999;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.agents-page-contact-option-value {
+  font-size: 15px;
+  color: #333;
+  font-weight: 500;
+}
+
+.agents-page-contact-option-action {
+  display: flex;
+  align-items: center;
+}
+
+.agents-page-contact-option-action-text {
+  font-size: 14px;
+  color: #3498db;
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.agents-page-contact-option-action-icon {
+  font-size: 16px;
+  color: #666;
+}
+
+.agents-page-schedule-button {
+  margin-top: 10px;
+  border-radius: 12px;
+  background-color: #232761;
+  padding: 16px;
+  width: 100%;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+/* Project modal styles */
+.agents-page-project-modal-container {
+  background-color: #fff;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 80%;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.agents-page-modal-close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.agents-page-modal-project-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.agents-page-modal-scroll-view {
+  padding: 20px;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.agents-page-modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+
+.agents-page-modal-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.agents-page-modal-location {
+  font-size: 16px;
+  color: #757575;
+}
+
+.agents-page-modal-rating {
+  font-size: 16px;
+  color: #ffc107;
+  font-weight: bold;
+}
+
+.agents-page-modal-status {
+  font-size: 16px;
+  color: #4caf50;
+  margin-bottom: 15px;
+}
+
+.agents-page-price-container-modal {
+  display: flex;
+  align-items: center;
+  background-color: rgba(26, 35, 126, 0.05);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.agents-page-price-label {
+  font-size: 14px;
+  color: #757575;
+  margin-right: 5px;
+}
+
+.agents-page-price-value {
+  font-size: 16px;
+  color: #1a237e;
+  font-weight: bold;
+}
+
+.agents-page-possession-container-modal {
+  display: flex;
+  align-items: center;
+  background-color: rgba(76, 175, 80, 0.05);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.agents-page-possession-label {
+  font-size: 14px;
+  color: #757575;
+  margin-right: 5px;
+}
+
+.agents-page-possession-value {
+  font-size: 16px;
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.agents-page-modal-description {
+  font-size: 14px;
+  color: #424242;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.agents-page-modal-buttons {
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+}
+
+.agents-page-modal-button {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  background: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #232761;
+  cursor: pointer;
+}
+
+.agents-page-modal-inquiry-button {
+  background-color: #1a237e;
+  color: #fff;
+}
+
+/* Inquiry modal styles */
+.agents-page-inquiry-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.agents-page-inquiry-modal-container {
+  width: 90%;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.agents-page-inquiry-modal-close-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: #232761;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.agents-page-inquiry-modal-title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #1a237e;
+}
+
+.agents-page-inquiry-modal-details {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.agents-page-inquiry-modal-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #757575;
+  margin-top: 10px;
+}
+
+.agents-page-inquiry-modal-value {
+  font-size: 14px;
+  color: #1a237e;
+  margin-top: 4px;
+}
+
+.agents-page-divider {
+  height: 1px;
+  background-color: #ddd;
+  margin: 16px 0;
+}

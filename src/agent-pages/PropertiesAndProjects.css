@@ -1,0 +1,767 @@
+/* Base styles */
+.agent-properties-projects-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Typography using classes */
+.agent-properties-projects-h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.agent-properties-projects-h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.agent-properties-projects-h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.agent-properties-projects-subtitle {
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+/* Header */
+.agent-properties-projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 32px;
+}
+
+/* Buttons */
+.agent-properties-projects-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.agent-properties-projects-btn-sm {
+  height: 32px;
+  padding: 0 12px;
+  font-size: 0.75rem;
+}
+
+.agent-properties-projects-btn-primary {
+  background-color: #9333ea;
+  color: white;
+}
+
+.agent-properties-projects-btn-primary:hover {
+  background-color: #7e22ce;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(147, 51, 234, 0.1);
+}
+
+.agent-properties-projects-btn-outline {
+  background-color: white;
+  border: 1px solid #d1d5db;
+  color: #374151;
+}
+
+.agent-properties-projects-btn-outline:hover {
+  background-color: #f9fafb;
+  border-color: #9333ea;
+  color: #9333ea;
+}
+
+.agent-properties-projects-btn-icon {
+  padding: 0;
+  width: 40px;
+}
+
+/* Icons */
+.agent-properties-projects-icon {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+}
+
+.agent-properties-projects-icon-sm {
+  width: 16px;
+  height: 16px;
+}
+
+.agent-properties-projects-icon-xs {
+  width: 12px;
+  height: 12px;
+}
+
+/* Tabs */
+.agent-properties-projects-tabs-container {
+  margin-bottom: 24px;
+}
+
+.agent-properties-projects-tabs-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.agent-properties-projects-tabs-list {
+  display: flex;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  padding: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.agent-properties-projects-tab-trigger {
+  padding: 8px 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  color: #6b7280;
+}
+
+.agent-properties-projects-tab-trigger.active {
+  background-color: white;
+  color: #9333ea;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.agent-properties-projects-tab-trigger:hover:not(.active) {
+  color: #9333ea;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.agent-properties-projects-tab-content {
+  display: none;
+}
+
+.agent-properties-projects-tab-content.active {
+  display: block;
+  animation: agent-properties-projects-fadeIn 0.3s ease;
+}
+
+@keyframes agent-properties-projects-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Search and filter */
+.agent-properties-projects-search-filter {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.agent-properties-projects-search-container {
+  position: relative;
+}
+
+.agent-properties-projects-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  width: 16px;
+  height: 16px;
+}
+
+.agent-properties-projects-search-input {
+  padding: 8px 8px 8px 40px;
+  width: 300px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.agent-properties-projects-search-input:focus {
+  outline: none;
+  border-color: #9333ea;
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
+}
+
+/* Cards */
+.agent-properties-projects-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .agent-properties-projects-card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 786px) {
+  .agent-properties-projects-tabs-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .agent-properties-projects-tabs-list {
+    justify-content: center;
+  }
+
+  .agent-properties-projects-tabs-list-header {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .agent-properties-projects-card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.agent-properties-projects-card {
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.agent-properties-projects-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  border-color: #d1d5db;
+}
+
+.agent-properties-topright-checkbox{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: 1px solid black;
+  z-index: 1;
+  width: 25px;
+  height: 25px;
+}
+
+.agent-properties-projects-card-image-container {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background-color: #f3f4f6;
+  overflow: hidden;
+}
+
+.agent-properties-projects-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.agent-properties-projects-card:hover .agent-properties-projects-card-image {
+  transform: scale(1.05);
+}
+
+.agent-properties-projects-card-content {
+  padding: 16px;
+}
+
+.agent-properties-projects-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.agent-properties-projects-card-title {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+.agent-properties-projects-card-address {
+  display: flex;
+  align-items: center;
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.agent-properties-projects-card-price {
+  color: #9333ea;
+  font-weight: 600;
+}
+
+.agent-properties-projects-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.agent-properties-projects-card-stats {
+  display: flex;
+  gap: 16px;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.agent-properties-projects-stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.agent-properties-projects-card-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Property specific */
+.agent-properties-projects-property-features {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-size: 0.875rem;
+}
+
+.agent-properties-projects-feature {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.agent-properties-projects-feature-value {
+  font-weight: 500;
+}
+
+/* Project specific */
+.agent-properties-projects-project-status {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(4px);
+  font-size: 0.875rem;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.agent-properties-projects-project-rating {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: #facc15;
+  color: white;
+  font-size: 0.875rem;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.agent-properties-projects-project-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 0.875rem;
+}
+
+.agent-properties-projects-project-possession {
+  text-align: right;
+}
+
+.agent-properties-projects-detail-value {
+  font-weight: 500;
+  color: #111827;
+}
+
+.agent-properties-projects-detail-label {
+  color: #6b7280;
+}
+
+/* Forms */
+.agent-properties-projects-form-container {
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.agent-properties-projects-form-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.agent-properties-projects-form-subtitle {
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.agent-properties-projects-form-section {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.agent-properties-projects-form-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.agent-properties-projects-section-title {
+  font-weight: 500;
+  margin-bottom: 16px;
+  color: #4b5563;
+}
+
+.agent-properties-projects-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.agent-properties-projects-three-columns {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.agent-properties-projects-form-group {
+  margin-bottom: 8px;
+}
+
+.agent-properties-projects-full-width {
+  grid-column: span 2;
+}
+
+.agent-properties-projects-form-label {
+  display: block;
+  font-size: 0.875rem;
+  margin-bottom: 4px;
+  color: #4b5563;
+  font-weight: 500;
+}
+
+.agent-properties-projects-form-input,
+.agent-properties-projects-form-select,
+.agent-properties-projects-form-textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.agent-properties-projects-form-input:focus,
+.agent-properties-projects-form-select:focus,
+.agent-properties-projects-form-textarea:focus {
+  outline: none;
+  border-color: #9333ea;
+  box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
+}
+
+.agent-properties-projects-form-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.agent-properties-projects-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+/* Upload area */
+.agent-properties-projects-upload-container {
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  transition: all 0.2s;
+  background-color: #f9fafb;
+}
+
+.agent-properties-projects-upload-container:hover {
+  border-color: #9333ea;
+  background-color: #f5f3ff;
+}
+
+.agent-properties-projects-upload-content {
+  margin-bottom: 16px;
+}
+
+.agent-properties-projects-upload-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 9999px;
+  background-color: #f3e8ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  transition: all 0.2s;
+}
+
+.agent-properties-projects-upload-container:hover
+  .agent-properties-projects-upload-icon {
+  background-color: #e9d5ff;
+  transform: scale(1.05);
+}
+
+.agent-properties-projects-upload-icon .agent-properties-projects-icon {
+  color: #9333ea;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+
+.agent-properties-projects-upload-text {
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-bottom: 4px;
+}
+
+.agent-properties-projects-upload-subtext {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Features grid */
+.agent-properties-projects-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.agent-properties-projects-checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.agent-properties-projects-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #9333ea;
+}
+
+.agent-properties-projects-checkbox-label {
+  font-size: 0.875rem;
+  color: #4b5563;
+}
+
+/* Switch */
+.agent-properties-projects-switch-options {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.agent-properties-projects-switch-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.agent-properties-projects-switch-group:hover {
+  background-color: #f5f3ff;
+}
+
+.agent-properties-projects-switch-description {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.agent-properties-projects-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.agent-properties-projects-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.agent-properties-projects-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #e5e7eb;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.agent-properties-projects-slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.agent-properties-projects-switch
+  input:checked
+  + .agent-properties-projects-slider {
+  background-color: #9333ea;
+}
+
+.agent-properties-projects-switch
+  input:checked
+  + .agent-properties-projects-slider:before {
+  transform: translateX(24px);
+}
+
+/* Add New Tabs */
+.agent-properties-projects-add-new-tabs {
+  margin-top: 16px;
+}
+
+/* Modal */
+.agent-properties-projects-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: agent-properties-projects-fadeIn 0.3s ease-out;
+}
+
+.agent-properties-projects-modal {
+  background: linear-gradient(135deg, #ffffff, #f7f7f7);
+  border-radius: 16px;
+  width: 700px;
+  height: 95vh;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  scrollbar-width: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: agent-properties-projects-slideUp 0.4s ease-out;
+}
+
+@keyframes agent-properties-projects-slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.agent-properties-projects-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: #9333ea;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  z-index: 10;
+}
+
+.agent-properties-projects-modal-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.agent-properties-projects-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.2s;
+}
+
+.agent-properties-projects-modal-close:hover {
+  color: #f3f4f6;
+}
+
+.agent-properties-projects-modal-content {
+  padding: 24px;
+}
+
+/* Edit image preview */
+.agent-properties-projects-edit-image-preview {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.agent-properties-projects-edit-image-preview img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.agent-properties-projects-edit-image-preview
+  .agent-properties-projects-upload-container {
+  padding: 16px;
+}

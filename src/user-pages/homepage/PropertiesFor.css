@@ -1,0 +1,329 @@
+.relative-class{
+  position: relative;
+}
+.relative-class .autocomplete-list{
+  color: black;
+}
+.property-for-card-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.property-for-heading {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.property-for-cards-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  gap: 25px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.property-for-card {
+  width: 30%;
+  background-color: var(--secondary-color);
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    filter 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  padding: 20px;
+}
+
+.property-for-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.05);
+}
+
+.property-for-card-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.property-for-card-content {
+  text-align: center;
+  padding: 0 10px;
+}
+
+.property-for-card-content h3 {
+  font-size: 28px;
+  color: #171717;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.property-for-card-content p {
+  font-size: 16px;
+  color: var(--text-color);
+  margin-bottom: 25px;
+}
+
+.btn {
+  padding: 12px 25px;
+  color: var(--secondary-color);
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.property-for-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.property-for-modal-content {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  border-radius: 20px;
+  width: 700px;
+  max-width: 90%;
+  color: var(--secondary-color);
+  animation: fade-in 0.4s ease-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.property-for-modal-content h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.property-for-modal-content label {
+  display: block;
+  margin-bottom: 15px;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.property-for-modal-content input,
+.property-for-modal-content select,
+.property-for-modal-content textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  color: var(--secondary-color);
+  font-size: 16px;
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  resize: vertical;
+  max-height: 100px;
+}
+
+.property-for-modal-content option{
+  color: black;
+} 
+.property-for-modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+
+  .property-for-card-container{
+    padding-right: 0;
+  }
+
+  .property-for-cards-wrapper{
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 0;
+    width: 100%;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .property-for-cards-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .property-for-card{
+    min-width: 75%;
+  }
+
+  .property-for-card.lastcard{
+    margin-right: 1rem;
+  }
+
+  .property-for-modal-content {
+    padding: 20px;
+    font-size: 14px;
+  }
+
+  .property-for-modal-content h2 {
+    font-size: 22px;
+  }
+
+  .property-for-modal-content label {
+    font-size: 12px;
+  }
+
+  .property-for-modal-content input,
+  .property-for-modal-content select,
+  .property-for-modal-content textarea {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .property-for-modal-content.glass {
+    padding: 15px;
+    font-size: 12px;
+  }
+
+  .property-for-modal-content h2 {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .property-for-modal-content label {
+    font-size: 10px;
+  }
+
+  .property-for-modal-content input,
+  .property-for-modal-content select,
+  .property-for-modal-content textarea {
+    font-size: 10px;
+    padding: 6px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    font-size: 12px;
+    padding: 8px 10px;
+  }
+}
+
+/* Alignments */
+@media (max-width: 768px) {
+  .property-for-modal-content label {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .property-for-modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .property-for-modal-content label {
+    margin-bottom: 8px;
+  }
+
+  .property-for-modal-content h2 {
+    margin-bottom: 15px;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .property-for-cards-wrapper {
+    justify-content: space-around;
+  }
+}
+
+@media (max-width: 992px) {
+  .property-for-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .property-for-card {
+    width: 90%;
+  }
+  .property-for-heading {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .property-for-heading {
+    font-size: 26px;
+  }
+  .property-for-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+}

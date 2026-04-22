@@ -1,0 +1,388 @@
+.servicePage {
+  background-color: var(--background-color);
+}
+
+.servicePage__heroSection {
+  padding: 50px 0;
+  padding-bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.servicePage__container {
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.servicePage__sampleServices{
+  display: grid; 
+  margin-bottom: 4rem;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  padding: 1rem 0;
+  border-radius: 19px;
+}
+
+.servicePage__sampleServices__Sarvice{
+  display: grid;
+  width: 150px;
+  height: 100px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.servicePage__sampleServices__Sarvice img{
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.servicePage__sampleServices__Sarvice p{
+  font-size: 1rem;
+}
+
+.servicePage__heroContent {
+  max-width: 50%;
+  padding-bottom: 30px;
+}
+
+.servicePage__title {
+  font-size: 70px;
+  margin-bottom: 20px;
+  line-height: 1.3;
+  font-weight: 500;
+  text-align: left;
+}
+
+.servicePage__description {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.servicePage__red-tag {
+  color: var(--primary-color);
+  background-color: #ffcaca;
+  width: fit-content;
+  padding: 1px 7px;
+  border-radius: 20px;
+}
+
+.servicePage__black-tag {
+  color: var(--text-color);
+  background-color: var(--secondary-color);
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1px 7px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+.servicePage__buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.servicePage__btn {
+  padding: 5px 30px;
+  border-radius: 7px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.servicePage__btn--primary {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: 20px;
+}
+
+.servicePage__btn--secondary {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.servicePage__heroImage img {
+  margin-left: 50px;
+  width: 140%;
+  max-width: 500px;
+  border-radius: 20px;
+}
+
+.servicePage__features {
+  width: 70%;
+  display: flex;
+  color: var(--secondary-color);
+  padding: 20px 0;
+  padding-top: 0;
+  margin: 0 auto;
+  margin-top: -30px;
+  justify-content: center;
+}
+
+.servicePage__feature {
+  font-size: 27px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  padding: 30px 60px;
+  margin-right: 25px;
+  margin-top: 0px;
+  border-radius: 7px;
+  white-space: nowrap;
+}
+
+.servicePage__feature i {
+  text-align: start;
+}
+
+.servicePage__servicesSection {
+  background-color: #111016; /*keep background same*/
+  color: var(--secondary-color);
+  padding: 60px 0;
+  padding-top: 100px;
+  margin-top: -60px;
+}
+
+.servicePage__servicesTitle {
+  width: 575px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+.servicePage__servicesGrid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.servicePage__serviceItem {
+  width: 30%;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.servicePage__serviceHeading,
+.servicePage__serviceItem i {
+  font-size: 30px;
+}
+
+.servicePage__advantageSection {
+  padding: 60px 0;
+}
+
+.servicePage__advantageContent {
+  max-width: 50%;
+}
+
+.servicePage__advantageTitle {
+  font-size: 36px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.servicePage__advantageDescription {
+  font-size: 18px;
+  color: var(--text-color);
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.servicePage__advantageList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.servicePage__advantageList li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.servicePage__advantageImage img {
+  width: 120%;
+  max-width: 500px;
+  border-radius: 20px;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .servicePage__heroContent {
+    max-width: 100%;
+    padding-bottom: 20px;
+  }
+
+  .servicePage__heroImage img {
+    max-width: 350px;
+    margin-left: 0;
+  }
+
+  .servicePage__title {
+    font-size: 50px;
+    margin-bottom: 15px;
+  }
+
+  .servicePage__description {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .servicePage__features {
+    width: 100%;
+    margin-top: -20px;
+  }
+
+  .servicePage__feature {
+    font-size: 24px;
+    padding: 20px 20px;
+    margin-right: 10px;
+  }
+
+  .servicePage__servicesSection {
+    padding: 50px 0;
+    margin-top: -50px;
+  }
+
+  .servicePage__servicesTitle {
+    width: 80%;
+    font-size: 32px;
+    margin-bottom: 35px;
+  }
+
+  .servicePage__servicesGrid {
+    gap: 15px;
+  }
+
+  .servicePage__serviceItem {
+    width: 48%;
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+
+  .servicePage__advantageSection {
+    padding: 30px 0;
+  }
+
+  .servicePage__advantageContent {
+    max-width: 80%;
+  }
+
+  .servicePage__advantageTitle {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+
+  .servicePage__advantageDescription {
+    font-size: 17px;
+  }
+
+  .servicePage__advantageList li {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .servicePage__sampleServices{
+    display: none;
+  }
+
+  .servicePage {
+    background-image: url("../../images/bg-worker.jpg");
+    background-size: 100% 100%;
+  }
+  
+  .servicePage__heroSection {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 0;
+  }
+
+  .servicePage__heroContent {
+    max-width: 100%;
+    padding-bottom: 20px;
+  }
+
+  .servicePage__title {
+    font-size: 40px;
+  }
+
+  .servicePage__description {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .servicePage__heroImage {
+    display: none;
+  }
+
+  .servicePage__features {
+    flex-direction: column;
+    width: 90%;
+    padding: 0 0 30px 0;
+    margin-top: 0;
+  }
+
+  .servicePage__feature {
+    font-size: 22px;
+    margin-right: 0;
+    margin-bottom: 20px;
+    padding: 20px 40px;
+  }
+
+  .servicePage__servicesSection {
+    margin-top: 0;
+    padding-top: 20px;
+  }
+
+  .servicePage__servicesTitle {
+    width: 95%;
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .servicePage__serviceItem {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .servicePage__advantageSection {
+    padding: 30px 0;
+  }
+
+  .servicePage__advantageContent {
+    max-width: 100%;
+  }
+
+  .servicePage__advantageTitle {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .servicePage__advantageImage {
+    display: none;
+  }
+
+  .servicePage__advantageDescription {
+    font-size: 16px;
+  }
+
+  .servicePage__advantageList li {
+    font-size: 16px;
+  }
+}

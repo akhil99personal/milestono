@@ -1,0 +1,11 @@
+ .bulk-home-container{
+    position: absolute;
+  top: 0;
+  right: 0;
+  font-weight: bold;
+  font-size: x-large;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  color: rgb(20, 27, 88);
+  border-radius: 6px;
+ }

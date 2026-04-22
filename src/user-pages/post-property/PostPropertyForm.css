@@ -1,0 +1,430 @@
+/* Container Styles */
+.post-property-form-container {
+  display: flex;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding-top: 5rem;
+  height: 100vh;
+  background-color: var(--background-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.property-form-step-container.postproperty{
+  display: none;
+}
+
+/* Sidebar Styling */
+.post-property-form-sidebar {
+  width: 25%;
+  background-color: #f4f5f7;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid #e0e0e0;
+}
+
+.post-property-form-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.post-property-form-step {
+  padding: 12px 15px;
+  border-left: 4px solid #e0e0e0;
+  cursor: pointer;
+  border-radius: 4px;
+  transition:
+    background-color 0.3s,
+    border-left 0.3s,
+    color 0.3s;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.post-property-form-step.active {
+  border-left: 4px solid var(--primary-color);
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.post-property-form-step.active:hover {
+  border-left: 4px solid var(--hover-color);
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.post-property-form-step:hover {
+  border-left: 4px solid var(--hover-color);
+}
+
+/* Main Content Styling */
+.post-property-form-main {
+  width: 60%;
+  padding: 20px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.post-property-form-main::-webkit-scrollbar {
+  display: none;
+}
+
+.form-heading {
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.post-property-form-content {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Input and Group Styling */
+.post-property-form-group {
+  margin-bottom: 20px;
+}
+
+.post-property-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #444;
+  font-size: 14px;
+}
+
+.post-property-form-group label.radiogroups {
+  display: flex;
+}
+
+.post-property-form-group label.radiogroups input {
+  font-size: 10px;
+}
+
+.post-property-form-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+  margin: 0.5rem 0;
+}
+
+.post-property-form-group select {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+  margin: 0.5rem 0;
+}
+
+.post-property-form-group input[type="number"]::-webkit-outer-spin-button,
+.post-property-form-group input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.post-property-form-group input[type="number"] {
+  -moz-appearance: textfield;
+} 
+
+.post-property-form-group input:focus {
+  border-color: var(--primary-color);
+  background-color: var(--secondary-color);
+  outline: none;
+}
+
+.post-property-form-group textarea {
+  width: 100%;
+  min-height: 180px;
+  height: 180px;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+  margin: 0.5rem 0;
+  resize: vertical;
+}
+
+.post-property-form-group input.post-property-form-group-input-radio {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+  margin: 0 0;
+}
+
+/* Options Buttons Styling */
+.post-property-form-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.post-property-form-option {
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: var(--secondary-color);
+  font-size: 14px;
+  color: #444;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.post-property-form-option.active {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-color: var(--primary-color);
+}
+
+.post-property-form-option:hover {
+  background-color: var(--ffaint-primary-color);
+  border-color: var(--hover-color);
+  color: var(--hover-color);
+}
+
+/* Photo Upload Styling */
+.photo-upload-box {
+  border: 2px dashed var(--hover-color);
+  padding: 30px;
+  text-align: center;
+  color: var(--hover-color);
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #fff;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+.photo-upload-box:hover {
+  background-color: var(--ffaint-primary-color);
+  border-color: var(--hover-color);
+}
+
+/* Contact Section Styling */
+.post-property-form-contact {
+  display: block;
+  width: 25%;
+  background-color: #f4f5f7;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  gap: 100px;
+  border-left: 1px solid #ddd;
+}
+
+.post-property-form-contact img {
+  width: 100%;
+  height: 180px;
+  margin-top: 150px;
+}
+
+.post-property-form-contact p {
+  margin-top: 170px;
+  color: #666;
+}
+
+.post-property-form-contact span {
+  font-size: 0.85rem;
+}
+
+.post-property-form-contact span a {
+  text-decoration: none;
+  color: #0056b3;
+}
+
+/* Score Circle */
+
+.post-property-form-score-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 0;
+  /* background-color: #007bff; */
+  color: var(--secondary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  font-size: 18px;
+}
+
+.post-property-form-score {
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 80%;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.post-property-form-score p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Wrapper for the SVG circle */
+.post-property-form-score-circle-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100px; /* Fixed size for wrapper */
+  height: 110px; /* Fixed size for wrapper */
+  margin: 0 auto;
+  overflow: hidden; /* Prevents SVG from overflowing the wrapper */
+}
+
+/* Circle background */
+.post-property-form-score-circle-background {
+  fill: none;
+  stroke: #e6e6e6;
+  stroke-width: 8;
+}
+
+/* Animated circle */
+.post-property-form-score-progress {
+  fill: none;
+  stroke: #4caf50;
+  stroke-width: 8;
+  transform: rotate(-90deg); /* Rotate to start the progress from top */
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 1s ease;
+}
+
+/* Percentage text */
+.post-property-form-score-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  pointer-events: none; /* Ensures the text doesn't block interaction with SVG */
+}
+
+/* Buttons */
+.post-property-form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.post-property-form-buttons button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  cursor: pointer;
+  font-size: 14px;
+  transition:
+    background-color 0.3s,
+    transform 0.2s;
+}
+
+.post-property-form-buttons button:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+}
+.add-amenity {
+  display: flex;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.add-amenity input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+  margin: 0.5rem 0;
+}
+.add-amenity button{
+  width: 100%;
+  padding: 12px 15px;
+  background-color: green;
+  font-weight: bold;
+  color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+  margin: 0.5rem 0;
+}
+
+.post-property-form-buttons button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .post-property-form-container {
+    flex-direction: column;
+    height: auto;
+    overflow: scroll;
+  }
+  .property-form-step-container.postproperty{
+    display: flex;
+  }
+  .post-property-form-sidebar {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    margin-top: 25px;
+    overflow: hidden;
+  }
+  .post-property-form-score {
+    margin-top: 0;
+  }
+  .post-property-form-contact {
+    display: none;
+  }
+  .post-property-form-main {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+  }
+
+  .post-property-form-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .post-property-form-step{
+    display: none;
+  }
+
+  .post-property-form-step.active:hover {
+    border-left: 4px solid var(--hover-color);
+    background-color: var(--ffaint-primary-color);
+    font-weight: bold;
+    color: var(--hover-color);
+  }
+
+  .post-property-form-step:hover {
+    border-left: 4px solid var(--hover-color);
+    background-color: var(--ffaint-primary-color);
+    font-weight: bold;
+    color: var(--hover-color);
+  }
+  
+  .post-property-form-option:hover {
+    background-color: var(--hover-color);
+    color: #fff;
+    border-color: var(--hover-color);
+  }
+
+}

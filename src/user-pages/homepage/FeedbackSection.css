@@ -1,0 +1,340 @@
+/* Container Styles */
+.home-page-section-outer-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 15px auto;
+  padding-bottom: 10px;
+}
+
+.home-page-section-pattern-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 25px;
+  border-color: rgba(230, 230, 250, 0.5);
+}
+
+.home-page-section-container {
+  padding: 25px 15px;
+  border-radius: 25px;
+}
+
+/* Header Styles */
+.home-page-section-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.home-page-section-header-left-section {
+  display: flex;
+  align-items: center;
+}
+
+.home-page-section-header-accent {
+  width: 4px;
+  height: 24px;
+  background-color: #232761;
+  border-radius: 2px;
+  margin-right: 12px;
+}
+
+.home-page-section-heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f2937;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+.home-page-section-view-all-button {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  background-color: rgba(74, 74, 156, 0.08);
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+
+.home-page-section-view-all-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4a4a9c;
+  margin-right: 4px;
+}
+
+.home-page-section-view-all-button svg {
+  color: #4a4a9c;
+}
+
+/* Scroll View */
+.home-page-section-animated-container {
+  opacity: 1;
+  transform: scale(1);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.home-page-section-animated-container.home-page-section-animating {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
+
+.home-page-section-scroll-view {
+  display: flex;
+  overflow-x: auto;
+  padding: 5px 5px 15px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scroll-snap-type: x mandatory;
+}
+
+.home-page-section-scroll-view::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Card Styles */
+.home-page-section-card {
+  border-radius: 16px;
+  margin-right: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  scroll-snap-align: start;
+}
+
+.home-page-section-active-card {
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.2);
+}
+
+.home-page-section-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.home-page-section-active-header {
+  background: linear-gradient(to right, #6366f1, #4f46e5);
+}
+
+.home-page-section-quote-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #4f46e5;
+}
+
+.home-page-section-active-header .home-page-section-quote-icon-container {
+  color: #fff;
+}
+
+.home-page-section-rating-container {
+  display: flex;
+  align-items: center;
+}
+
+.home-page-section-star {
+  font-size: 16px;
+  margin-left: 2px;
+}
+
+.home-page-section-star.home-page-section-filled {
+  color: #ffd700;
+}
+
+.home-page-section-star.home-page-section-empty {
+  color: #d0d0d0;
+}
+
+.home-page-section-active-header
+  .home-page-section-star.home-page-section-empty {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.home-page-section-active-header
+  .home-page-section-star.home-page-section-filled {
+  color: #ffd700;
+}
+
+/* Message Styles */
+.home-page-section-message-container {
+  padding: 20px;
+  padding-bottom: 10px;
+}
+
+.home-page-section-message {
+  font-size: 16px;
+  font-weight: 400;
+  color: #4b5563;
+  line-height: 24px;
+  letter-spacing: 0.1px;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.home-page-section-active-message {
+  color: #1f2937;
+}
+
+.home-page-section-read-more-button {
+  align-self: flex-start;
+  margin-top: 8px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #4f46e5;
+  cursor: pointer;
+}
+
+/* Footer Styles */
+.home-page-section-card-footer {
+  padding: 10px 20px 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.home-page-section-user-info {
+  display: flex;
+  align-items: center;
+}
+
+.home-page-section-avatar-container {
+  position: relative;
+  border: 2px solid #e5e7eb;
+  border-radius: 30px;
+  padding: 2px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease;
+}
+
+.home-page-section-active-avatar-container {
+  border-color: #4f46e5;
+}
+
+.home-page-section-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  object-fit: cover;
+}
+
+.home-page-section-verified-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  background-color: #10b981;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ffffff;
+}
+
+.home-page-section-verified-text {
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.home-page-section-user-text-container {
+  margin-left: 15px;
+}
+
+.home-page-section-user-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1f2937;
+  letter-spacing: -0.3px;
+  margin: 0 0 2px;
+}
+
+.home-page-section-active-user-name {
+  color: #1f2937;
+}
+
+.home-page-section-user-position {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 2px 0 4px;
+}
+
+.home-page-section-date {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 4px 0 0;
+}
+
+.home-page-section-active-date {
+  color: #6b7280;
+}
+
+/* Pagination Styles */
+.home-page-section-pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.home-page-section-pagination-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 4px;
+  background-color: #d1d5db;
+  margin: 0 5px;
+  opacity: 0.5;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.home-page-section-active-pagination-dot {
+  width: 24px;
+  background-color: #232761;
+  opacity: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .home-page-section-card {
+    width: 280px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-page-section-header-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-page-section-view-all-button {
+    margin-top: 10px;
+  }
+
+  .home-page-section-card {
+    width: 260px !important;
+  }
+}

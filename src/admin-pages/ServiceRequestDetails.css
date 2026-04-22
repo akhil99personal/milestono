@@ -1,0 +1,22 @@
+/* All standard table, modal, and filter layout styles are now inherited globally from admin-global.css */
+
+.service-man-list {
+  list-style: none;
+  padding: 0;
+}
+
+.service-man-item {
+  border: 1px solid var(--admin-border);
+  padding: 10px;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: var(--admin-radius-md);
+  background: var(--admin-hover-bg);
+}
+
+.service-man-item div {
+  margin: 5px 0;
+}

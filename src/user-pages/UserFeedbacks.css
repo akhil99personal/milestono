@@ -1,0 +1,160 @@
+.feedback-page-container {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px;
+  background-color: var(--background-color);
+  justify-content: center;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.property-for-cards-wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.feedback-page-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 30%;
+  min-width: 300px;
+  padding: 30px;
+  margin: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  position: relative;
+}
+
+.feedback-page-quote {
+  font-size: 3em;
+  color: #cccccc;
+  position: absolute;
+  top: -10px;
+  left: 20px;
+}
+
+.feedback-page-text {
+  font-size: 1em;
+  color: #333;
+  line-height: 1.6;
+  margin: 20px 0;
+  flex-grow: 1;
+}
+
+.feedback-page-info {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.feedback-page-img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.feedback-page-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-page-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.feedback-page-date {
+  font-size: 0.75rem;
+  color: #777;
+}
+
+.feedback-page-arrow {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  font-size: 1.5em;
+  color: #333;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.feedback-page-arrow:hover {
+  transform: translateX(5px);
+}
+
+.feedback-page-controls {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  text-align: left;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  align-items: center;
+}
+
+.feedback-page-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 0;
+}
+
+.feedback-page-pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+    .feedback-page-cards{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 786px) {
+
+  .feedback-page-container {
+    padding: 0 20px;
+  }
+
+  .feedback-page-controls {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 100%;
+    gap: 20px 5px;
+  }
+
+  .feedback-page-controls-h1 {
+    font-size: 2.2rem;
+  }
+
+  .feedback-page-card {
+    width: 100%;
+  }
+
+  .feedback-page-cards {
+    display: flex;
+    justify-content: center;
+  }
+
+  .feedback-page-text {
+    font-size: 1.75rem;
+  }
+
+  .feedback-page-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .feedback-page-name {
+    font-size: 1.5rem;
+  }
+
+  .feedback-page-date {
+    font-size: 1.3rem;
+  }
+}

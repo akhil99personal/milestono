@@ -1,0 +1,642 @@
+/***************************************
+ * Main Container and Layout
+ ***************************************/
+.advertisement-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding: 2rem;
+  font-family: "Inter", sans-serif;
+}
+
+/***************************************
+   * Header Section
+   ***************************************/
+.advertisement-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.advertisement-header-title h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.advertisement-header-subtitle {
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.advertisement-create-button {
+  background-color: #7c3aed;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.advertisement-create-button:hover {
+  background-color: #6d28d9;
+}
+
+/***************************************
+   * Top Stats Grid
+   ***************************************/
+.advertisement-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.advertisement-stat-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left accent on the first card */
+.advertisement-stat-card.advertisement-left-accent::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: #7c3aed;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.advertisement-stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.advertisement-stat-header h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.advertisement-stat-icon {
+  color: #6b7280;
+}
+
+.advertisement-stat-value {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.advertisement-stat-change {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.advertisement-positive {
+  color: #10b981;
+}
+
+.advertisement-negative {
+  color: #ef4444;
+}
+
+/***************************************
+   * Charts Sections
+   ***************************************/
+.advertisement-charts-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.advertisement-trends-card,
+.advertisement-traffic-card,
+.advertisement-device-card {
+  flex: 1;
+  min-width: 350px;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  margin-bottom: 24px;
+}
+
+.advertisement-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.advertisement-chart-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #111827;
+}
+
+.advertisement-chart-header p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.advertisement-chart-content {
+  position: relative;
+  height: 300px;
+}
+
+/* Example select for chart period */
+.advertisement-select {
+  appearance: none;
+  padding: 8px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 14px;
+  color: #111827;
+  cursor: pointer;
+  min-width: 120px;
+}
+
+.advertisement-select:focus {
+  outline: 2px solid #7c3aed;
+}
+
+/***************************************
+   * Pie/Donut Chart Center Label
+   ***************************************/
+.advertisement-donut-center-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+}
+
+.advertisement-donut-percent {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.advertisement-donut-label {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/***************************************
+   * Chart Legend
+   ***************************************/
+.advertisement-chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 5px;
+}
+
+.advertisement-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.advertisement-legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/***************************************
+   * Tabs + Search
+   ***************************************/
+.advertisement-tabs-search {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.advertisement-dashboard-tabs {
+  display: flex;
+  gap: 8px;
+  background-color: #f3f4f6;
+  padding: 4px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.advertisement-tab-button {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.advertisement-tab-button.active {
+  background-color: #ffffff;
+  color: #111827;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* Search */
+.advertisement-search-container {
+  margin-left: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.advertisement-search-icon {
+  position: absolute;
+  left: 10px;
+  color: #6b7280;
+}
+
+.advertisement-search-input {
+  padding: 8px 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #111827;
+  outline: none;
+  width: 220px;
+}
+
+/***************************************
+   * Tabs Content: Cards and Table
+   ***************************************/
+.advertisement-tabs-content {
+  margin-bottom: 2rem;
+}
+
+/* Cards Grid */
+.campaign-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+/* Card */
+.campaign-card {
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Header */
+.campaign-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px;
+  background-color: #f3f4f8;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.campaign-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 4px 0;
+}
+
+.campaign-card-date {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.campaign-card-badge {
+  background-color: #8b5cf6;
+  color: white;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 16px;
+}
+
+/* Property section */
+.campaign-card-property {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.campaign-card-property-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 40px;
+  background-color: #f3f4f6;
+  border-radius: 6px;
+  margin-right: 12px;
+}
+
+.campaign-card-property-icon img {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+}
+
+.campaign-card-property-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 2px 0;
+}
+
+.campaign-card-property-label {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Stats section */
+.campaign-card-stats {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.campaign-card-stat {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.campaign-card-stat-label {
+  font-size: 14px;
+  color: #111827;
+  font-weight: 500;
+}
+
+.campaign-card-stat-value {
+  font-size: 14px;
+  color: #111827;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.campaign-card-stat-ctr {
+  margin-top: 16px;
+}
+
+.campaign-card-stat-target {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.campaign-card-progress {
+  height: 6px;
+  background-color: #e5e7eb;
+  border-radius: 3px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.campaign-card-progress-bar {
+  height: 100%;
+  background-color: #8b5cf6;
+  border-radius: 3px;
+}
+
+/* Footer */
+.campaign-card-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.campaign-card-button-edit {
+  padding: 8px 16px;
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+}
+
+.campaign-card-button-view {
+  padding: 8px 16px;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.campaign-card-button-edit:hover,
+.campaign-card-button-view:hover {
+  background-color: #f9fafb;
+}
+
+/***************************************
+   * Table Sections
+   ***************************************/
+.advertisement-table-section {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.advertisement-table-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.advertisement-table-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.advertisement-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+}
+
+.advertisement-table thead tr th {
+  padding-left: 1rem;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  padding-bottom: 0.5rem;
+}
+
+.advertisement-table tbody tr {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.advertisement-table tbody tr td {
+  padding: 0.75rem;
+  vertical-align: middle;
+  font-size: 14px;
+  color: #111827;
+  border-top: 1px solid #f3f4f6;
+}
+
+.advertisement-table tbody tr:first-child td {
+  border-top: none;
+}
+
+.advertisement-visitor-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.advertisement-visitor-name {
+  font-weight: 500;
+  color: #111827;
+}
+
+.advertisement-visitor-email {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.advertisement-table-action-btn {
+  background-color: transparent;
+  border: none;
+  color: #7c3aed;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-right: 8px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.advertisement-table-action-btn:hover {
+  background-color: #f9f8ff;
+}
+
+/***************************************
+   * Visitor Engagement Section
+   ***************************************/
+.advertisement-visitor-engagement-section {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+.advertisement-visitor-engagement-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.advertisement-visitor-engagement-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.advertisement-visitor-engagement-chart {
+  position: relative;
+  height: 300px;
+}
+
+/***************************************
+   * Custom Tooltip
+   ***************************************/
+.advertisement-custom-tooltip {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.advertisement-tooltip-label {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.advertisement-tooltip-value {
+  margin: 4px 0;
+}
+
+/***************************************
+   * Responsive Adjustments
+   ***************************************/
+@media (max-width: 1200px) {
+  .advertisement-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .advertisement-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .advertisement-charts-section {
+    flex-direction: column;
+  }
+
+  .advertisement-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .advertisement-header-section {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .advertisement-search-input {
+    width: 100%;
+  }
+}

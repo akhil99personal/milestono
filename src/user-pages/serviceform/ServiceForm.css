@@ -1,0 +1,888 @@
+/* Root Variables */
+:root {
+  --service-form-primary: #3b82f6;
+  --service-form-primary-dark: #2563eb;
+  --service-form-primary-light: #60a5fa;
+  --service-form-secondary: #6b7280;
+  --service-form-success: #10b981;
+  --service-form-error: #ef4444;
+  --service-form-warning: #f59e0b;
+  --service-form-background: #f8fafc;
+  --service-form-card-bg: #ffffff;
+  --service-form-border: #e5e7eb;
+  --service-form-border-focus: #3b82f6;
+  --service-form-text-primary: #111827;
+  --service-form-text-secondary: #6b7280;
+  --service-form-text-muted: #9ca3af;
+  --service-form-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --service-form-shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --service-form-shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --service-form-shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --service-form-radius: 8px;
+  --service-form-radius-lg: 12px;
+  --service-form-radius-xl: 16px;
+}
+
+/* Container */
+.service-form-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  padding: 2rem 1rem;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", sans-serif;
+}
+
+/* Header */
+.service-form-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.service-form-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--service-form-text-primary);
+  margin: 0 0 0.5rem 0;
+  line-height: 1.2;
+}
+
+.service-form-subtitle {
+  font-size: 1.125rem;
+  color: var(--service-form-text-secondary);
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Layout */
+.service-form-layout {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1fr 280px;
+  gap: 2rem;
+}
+
+/* Sidebar */
+.service-form-sidebar {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.service-form-sidebar-card {
+  background: var(--service-form-card-bg);
+  border-radius: var(--service-form-radius-xl);
+  box-shadow: var(--service-form-shadow-lg);
+  border: 1px solid var(--service-form-border);
+  overflow: hidden;
+}
+
+.service-form-sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--service-form-border);
+}
+
+.service-form-sidebar-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--service-form-text-primary);
+  margin: 0 0 0.25rem 0;
+}
+
+.service-form-sidebar-description {
+  font-size: 0.875rem;
+  color: var(--service-form-text-secondary);
+  margin: 0;
+}
+
+.service-form-steps {
+  padding: 1rem;
+}
+
+.service-form-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: var(--service-form-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 0.5rem;
+  border: 2px solid transparent;
+}
+
+.service-form-step:hover {
+  background: #f8fafc;
+}
+
+.service-form-step-active {
+  background: #dbeafe;
+  border-color: var(--service-form-primary);
+}
+
+.service-form-step-completed {
+  background: #d1fae5;
+  border-color: var(--service-form-success);
+}
+
+.service-form-step-icon {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  flex-shrink: 0;
+  background: var(--service-form-secondary);
+  color: white;
+}
+
+.service-form-step-active .service-form-step-icon {
+  background: var(--service-form-primary);
+}
+
+.service-form-step-completed .service-form-step-icon {
+  background: var(--service-form-success);
+}
+
+.service-form-step-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.service-form-step-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--service-form-text-primary);
+  margin: 0 0 0.25rem 0;
+  line-height: 1.3;
+}
+
+.service-form-step-description {
+  font-size: 0.75rem;
+  color: var(--service-form-text-secondary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Progress Section */
+.service-form-progress-section {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--service-form-border);
+}
+
+.service-form-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.service-form-progress-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--service-form-text-primary);
+}
+
+.service-form-progress-percentage {
+  font-size: 0.875rem;
+  color: var(--service-form-text-secondary);
+}
+
+.service-form-progress-bar {
+  height: 0.5rem;
+  background: #e5e7eb;
+  border-radius: 0.25rem;
+  overflow: hidden;
+}
+
+.service-form-progress-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--service-form-primary),
+    var(--service-form-primary-light)
+  );
+  transition: width 0.3s ease;
+}
+
+/* Main Content */
+.service-form-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.service-form-main-card {
+  background: var(--service-form-card-bg);
+  border-radius: var(--service-form-radius-xl);
+  box-shadow: var(--service-form-shadow-lg);
+  border: 1px solid var(--service-form-border);
+  overflow: hidden;
+}
+
+.service-form-main-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--service-form-border);
+  background: #f8fafc;
+}
+
+.service-form-main-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #dbeafe;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+}
+
+.service-form-main-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--service-form-text-primary);
+  margin: 0;
+}
+
+.service-form-main-description {
+  font-size: 0.875rem;
+  color: var(--service-form-text-secondary);
+  margin: 0.25rem 0 0 0;
+}
+
+.service-form-main-content {
+  padding: 2rem;
+}
+
+/* Step Content */
+.service-form-step-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Form Fields */
+.service-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.service-form-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--service-form-text-primary);
+}
+
+.service-form-required {
+  color: var(--service-form-error);
+}
+
+.service-form-input,
+.service-form-select,
+.service-form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--service-form-border);
+  border-radius: var(--service-form-radius);
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+  background: var(--service-form-card-bg);
+  color: var(--service-form-text-primary);
+  font-family: inherit;
+}
+
+.service-form-input:focus,
+.service-form-select:focus,
+.service-form-textarea:focus {
+  outline: none;
+  border-color: var(--service-form-border-focus);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.service-form-input-error {
+  border-color: var(--service-form-error);
+}
+
+.service-form-textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.5;
+}
+
+.service-form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+  appearance: none;
+}
+
+/* Grid Layouts */
+.service-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-form-grid-three {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* Profile Section */
+.service-form-profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.service-form-profile-upload-wrapper {
+  position: relative;
+}
+
+.service-form-profile-image-container {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 4px solid var(--service-form-border);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.service-form-profile-image-container:hover {
+  border-color: var(--service-form-primary);
+  transform: scale(1.05);
+}
+
+.service-form-profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-form-profile-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.service-form-profile-image-container:hover .service-form-profile-overlay {
+  opacity: 1;
+}
+
+.service-form-profile-text {
+  font-size: 0.875rem;
+  color: var(--service-form-text-secondary);
+  margin: 0;
+}
+
+/* Experience Options */
+.service-form-experience-options {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.service-form-experience-btn {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid var(--service-form-border);
+  border-radius: var(--service-form-radius);
+  background: var(--service-form-card-bg);
+  color: var(--service-form-text-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 3rem;
+}
+
+.service-form-experience-btn:hover {
+  border-color: var(--service-form-primary);
+  background: #f0f9ff;
+}
+
+.service-form-experience-btn-active {
+  border-color: var(--service-form-primary);
+  background: var(--service-form-primary);
+  color: white;
+}
+
+/* File Upload */
+.service-form-file-upload-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.service-form-upload-area {
+  border: 2px dashed var(--service-form-border);
+  border-radius: var(--service-form-radius-lg);
+  padding: 2rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #f8fafc;
+}
+
+.service-form-upload-area:hover {
+  border-color: var(--service-form-primary);
+  background: #f0f9ff;
+}
+
+.service-form-upload-success {
+  border-color: var(--service-form-success);
+  background: #f0fdf4;
+}
+
+.service-form-upload-error {
+  border-color: var(--service-form-error);
+  background: #fef2f2;
+}
+
+.service-form-upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.service-form-upload-icon {
+  font-size: 2rem;
+  color: var(--service-form-text-muted);
+}
+
+.service-form-upload-success-icon {
+  color: var(--service-form-success);
+}
+
+.service-form-upload-text {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--service-form-text-primary);
+  margin: 0;
+}
+
+.service-form-upload-filename {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--service-form-success);
+  margin: 0;
+}
+
+.service-form-upload-subtext,
+.service-form-upload-success-text {
+  font-size: 0.75rem;
+  color: var(--service-form-text-secondary);
+  margin: 0;
+}
+
+.service-form-upload-success-text {
+  color: var(--service-form-success);
+}
+
+/* Agreement Card */
+.service-form-agreement-card {
+  background: #f0f9ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--service-form-radius-lg);
+  padding: 1.5rem;
+}
+
+.service-form-checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.service-form-checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid var(--service-form-border);
+  border-radius: 0.25rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.service-form-checkbox:checked {
+  background: var(--service-form-primary);
+  border-color: var(--service-form-primary);
+}
+
+.service-form-checkbox-error {
+  border-color: var(--service-form-error);
+}
+
+.service-form-checkbox-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--service-form-text-primary);
+  cursor: pointer;
+  margin: 0 0 0.25rem 0;
+}
+
+.service-form-checkbox-description {
+  font-size: 0.75rem;
+  color: var(--service-form-text-secondary);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Navigation */
+.service-form-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-form-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--service-form-radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  text-decoration: none;
+}
+
+.service-form-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.service-form-btn-primary {
+  background: var(--service-form-primary);
+  color: white;
+}
+
+.service-form-btn-primary:hover:not(:disabled) {
+  background: var(--service-form-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--service-form-shadow-md);
+}
+
+.service-form-btn-secondary {
+  background: var(--service-form-card-bg);
+  color: var(--service-form-text-primary);
+  border: 2px solid var(--service-form-border);
+}
+
+.service-form-btn-secondary:hover:not(:disabled) {
+  background: #f8fafc;
+  border-color: var(--service-form-primary);
+}
+
+.service-form-btn-submit {
+  background: var(--service-form-success);
+}
+
+.service-form-btn-submit:hover:not(:disabled) {
+  background: #059669;
+}
+
+/* Spinner */
+.service-form-spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: service-form-spin 1s linear infinite;
+}
+
+@keyframes service-form-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Help Sidebar */
+.service-form-help-sidebar {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.service-form-help-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.service-form-help-card {
+  background: var(--service-form-card-bg);
+  border-radius: var(--service-form-radius-xl);
+  box-shadow: var(--service-form-shadow-lg);
+  border: 1px solid var(--service-form-border);
+  overflow: hidden;
+}
+
+.service-form-help-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--service-form-border);
+}
+
+.service-form-help-icon {
+  font-size: 1.25rem;
+}
+
+.service-form-help-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--service-form-text-primary);
+  margin: 0;
+}
+
+.service-form-help-content {
+  padding: 1.25rem;
+}
+
+.service-form-help-text {
+  font-size: 0.875rem;
+  color: var(--service-form-text-secondary);
+  line-height: 1.5;
+  margin: 0 0 1rem 0;
+}
+
+.service-form-help-btn {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  background: var(--service-form-card-bg);
+  border: 2px solid var(--service-form-border);
+  border-radius: var(--service-form-radius);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--service-form-text-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.service-form-help-btn:hover {
+  border-color: var(--service-form-primary);
+  background: #f0f9ff;
+}
+
+/* Benefits */
+.service-form-benefit {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.service-form-benefit:last-child {
+  margin-bottom: 0;
+}
+
+.service-form-benefit-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.service-form-benefit-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--service-form-text-primary);
+  margin: 0 0 0.25rem 0;
+}
+
+.service-form-benefit-description {
+  font-size: 0.75rem;
+  color: var(--service-form-text-secondary);
+  margin: 0;
+}
+
+/* Tips */
+.service-form-tips {
+  font-size: 0.875rem;
+  color: var(--service-form-text-secondary);
+  line-height: 1.6;
+}
+
+.service-form-tips p {
+  margin: 0 0 0.5rem 0;
+}
+
+.service-form-tips p:last-child {
+  margin-bottom: 0;
+}
+
+/* Error Messages */
+.service-form-error-message {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--service-form-error);
+  margin: 0;
+}
+
+.service-form-error-icon {
+  font-size: 0.875rem;
+}
+
+/* Hidden */
+.service-form-hidden {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .service-form-layout {
+    grid-template-columns: 280px 1fr 260px;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .service-form-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .service-form-sidebar,
+  .service-form-help-sidebar {
+    position: static;
+  }
+
+  .service-form-help-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-form-container {
+    padding: 1rem;
+  }
+
+  .service-form-title {
+    font-size: 2rem;
+  }
+
+  .service-form-subtitle {
+    font-size: 1rem;
+  }
+
+  .service-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-form-grid-three {
+    grid-template-columns: 1fr;
+  }
+
+  .service-form-main-header {
+    padding: 1rem;
+  }
+
+  .service-form-main-content {
+    padding: 1.5rem;
+  }
+
+  .service-form-experience-options {
+    justify-content: center;
+  }
+
+  .service-form-navigation {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .service-form-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-form-container {
+    padding: 0.5rem;
+  }
+
+  .service-form-header {
+    margin-bottom: 2rem;
+  }
+
+  .service-form-title {
+    font-size: 1.75rem;
+  }
+
+  .service-form-main-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .service-form-main-title-section {
+    text-align: center;
+  }
+
+  .service-form-upload-area {
+    padding: 1.5rem 1rem;
+  }
+
+  .service-form-checkbox-container {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .service-form-checkbox {
+    align-self: flex-start;
+  }
+}
+
+/* Focus styles for accessibility */
+.service-form-btn:focus-visible,
+.service-form-input:focus-visible,
+.service-form-select:focus-visible,
+.service-form-textarea:focus-visible,
+.service-form-checkbox:focus-visible {
+  outline: 2px solid var(--service-form-primary);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+
+.service-form-container * {
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}

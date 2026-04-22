@@ -1,0 +1,6 @@
+.my-service-container {
+  margin: 0 auto;
+  background-color: var(--background-color);
+  min-height: 100vh;
+  margin-top: 4.84375rem;
+}

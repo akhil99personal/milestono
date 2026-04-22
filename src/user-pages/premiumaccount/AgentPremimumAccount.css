@@ -1,0 +1,85 @@
+.agent-premium-account-section {
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.agent-premium-account-section > h1 {
+  color: var(--primary-color);
+  width: 100%;
+  max-width: 43.75rem;
+  margin: auto;
+}
+
+.agent-premium-account-section > p {
+  color: var(--primary-color);
+  width: 100%;
+  max-width: 43.75rem;
+  margin: 0.125rem auto 1.25rem;
+}
+
+.agent-premium-account-container {
+  display: flex;
+  width: fit-content;
+  max-width: 100%;
+  overflow-x: auto;
+  gap: 1.25rem;
+  padding-bottom: 1.25rem;
+  margin: auto;
+}
+
+.agent-premium-account-account-card {
+  width: 18.75rem;
+  padding: 1.25rem;
+  background-color: var(--background-color);
+  border-radius: 0.875rem;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.agent-premium-account-account-card:hover {
+  transform: translateY(-1.25rem);
+}
+
+.agent-premium-account-package-name {
+  font-size: 2rem;
+  color: var(--text-color);
+  width: fit-content;
+  margin: auto;
+}
+
+.agent-premium-account-package-name hr {
+  border-top: 0.1875rem solid var(--primary-color);
+}
+
+.agent-premium-account-account-detail {
+  margin: 0.625rem 0;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  min-width: 12.5rem;
+}
+
+.agent-premium-account-price {
+  color: var(--primary-color);
+  font-size: 1.7rem;
+}
+
+.agent-premium-account-dark-red {
+  color: var(--hover-color);
+}
+
+.agent-premium-account-highlight-account-details {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.agent-premium-account-try-now {
+  border: none;
+  border-radius: 1.875rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  width: fit-content;
+  text-align: center;
+  padding: 0.4375rem 1.5625rem;
+  margin: 0.3125rem auto 1.25rem;
+}

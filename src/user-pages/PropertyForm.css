@@ -1,0 +1,120 @@
+.property-form-form {
+  font-family: Arial, sans-serif;
+  border: 0.0625rem solid #ccc;
+  padding: 1.25rem;
+  border-radius: 0.3125rem;
+  background-color: var(--secondary-color);
+  max-width: 48rem;
+  margin: auto;
+  margin-top: 4.84375rem;
+}
+
+.property-form-form input,
+.property-form-form select,
+.property-form-form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3125rem;
+  border: 0.0625rem solid #ccc;
+  border-radius: 0.1875rem;
+  box-sizing: border-box;
+}
+
+.property-form-step-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1.25rem 0;
+}
+
+.property-form-step {
+  position: relative;
+  padding: 0.625rem 1.875rem;
+  background-color: #e0e0e0;
+  color: var(--secondary-color);
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: bold;
+  flex: 1;
+  margin: 0;
+  cursor: pointer;
+}
+
+.property-form-step:first-child {
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
+}
+
+.property-form-step:last-child {
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+}
+
+.property-form-step:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.property-form-step:after {
+  right: -1.25rem;
+  border-width: 1.625rem 0 1.625rem 1.3125rem;
+  border-color: transparent transparent transparent #e0e0e0;
+  z-index: 2;
+}
+
+.property-form-step1.property-form-active {
+  background-color: var(--primary-color);
+}
+
+.property-form-step2 {
+  background-color: #b9b9b9;
+}
+
+.property-form-step3 {
+  background-color: #dadada;
+}
+
+.property-form-step2.property-form-active {
+  background-color: #ff7373;
+}
+
+.property-form-step3.property-form-active {
+  background-color: #ffbbbb;
+}
+
+.property-form-step1.property-form-active:after {
+  border-color: transparent transparent transparent var(--primary-color);
+}
+
+.property-form-step2:after {
+  border-color: transparent transparent transparent #b9b9b9;
+}
+
+.property-form-step3:after {
+  border-color: transparent transparent transparent #999999;
+}
+
+.property-form-step2.property-form-active:after {
+  border-color: transparent transparent transparent #ff7373;
+}
+
+.property-form-step3.property-form-active:after {
+  border-color: transparent transparent transparent #ffbbbb;
+}
+
+.property-form-step:last-child:after {
+  content: none;
+}
+
+@media screen and (max-width: 48rem) {
+  .property-form-form {
+    width: 100%;
+  }
+  .property-form-step{
+    font-size: 1.5rem;
+  }
+}

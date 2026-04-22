@@ -1,0 +1,58 @@
+.bottom-nav-bar {
+    display: none;
+}
+
+@media (max-width : 786px) {
+
+    /* BottomNavBar.css */
+    .bottom-nav-bar {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--secondary-color);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 18px rgba(0, 0, 0, 0.19);
+        padding: 10px 0;
+        z-index: 15;
+        border-top-right-radius: 29px;
+        border-top-left-radius: 29px;
+    }
+
+    .bottom-nav-bar-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 12px;
+        color: var(--primary-color);
+        position: relative;
+    }
+
+    .bottom-nav-bar-nav-item i {
+        font-size: 25px;
+        margin-bottom: 4px;
+    }
+
+    .bottom-nav-bar-nav-item-sell-rent {
+        position: relative;
+    }
+
+    .bottom-nav-bar-nav-item-sell-rent-icon {
+        width: 45px;
+        height: 45px;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--secondary-color);
+        font-size: 24px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .bottom-nav-bar-nav-item-sell-rent-icon i {
+        font-size: 24px;
+    }
+}

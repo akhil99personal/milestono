@@ -1,0 +1,629 @@
+/* ServicemansPage.css */
+/* Main variables and theme colors */
+
+/* Dark mode background for body */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: linear-gradient(to bottom, #111827, #1f2937);
+  }
+}
+
+/* Main container */
+.serviceman-page-service-provider-map {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.serviceman-page-map-container {
+  position: relative;
+  height: calc(100% - 30px);
+  width: 100%;
+  z-index: 1;
+}
+
+/* List Panel */
+.serviceman-page-list-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.95);
+  transition: all 0.3s ease-in-out;
+  z-index: 10;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.serviceman-page-list-panel.open {
+  width: 100%;
+}
+
+.serviceman-page-list-panel.closed {
+  width: 0;
+}
+
+.serviceman-page-list-content,
+.serviceman-page-provider-profile {
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+  overflow-y: auto;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.otp-err{
+  color: red;
+}
+  
+/* Search Container */
+.serviceman-page-search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.serviceman-page-search-input {
+  flex: 1;
+  background-color: rgba(50, 50, 50, 0.7);
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 12px 12px 12px 20px;
+  color: white;
+  font-size: 14px;
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  background-size: 16px;
+}
+
+.serviceman-page-search-input::placeholder {
+  color: #999;
+}
+
+.serviceman-page-filter-button {
+  background-color: rgba(50, 50, 50, 0.7);
+  border: 1px solid #444;
+  border-radius: 8px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* List Title */
+.serviceman-page-list-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Providers List */
+.serviceman-page-providers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.serviceman-page-provider-item {
+  display: flex;
+  align-items: center;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.serviceman-page-provider-item:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.serviceman-page-provider-avatar {
+  background-color: #333;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+}
+
+.serviceman-page-user-icon {
+  color: #10b981; /* Changed from green to blue */
+}
+
+.serviceman-page-provider-info {
+  flex: 1;
+}
+
+.serviceman-page-provider-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.serviceman-page-provider-experience {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+}
+
+.serviceman-page-provider-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.serviceman-page-request-button {
+  background-color: #10b981; /* Changed from green to blue */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.serviceman-page-request-button:hover {
+  background-color: #029d69; /* Darker blue on hover */
+}
+
+.serviceman-page-provider-price {
+  color: #4caf50; /* Kept green for price */
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* Toggle Button */
+.serviceman-page-toggle-button {
+  position: absolute;
+  top: 20px;
+  z-index: 20;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: left 0.3s ease-in-out;
+}
+
+.serviceman-page-toggle-button.open {
+  left: calc(100% - 20px);
+}
+
+.serviceman-page-toggle-button.closed {
+  left: 20px;
+}
+
+.serviceman-page-toggle-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s;
+}
+
+.serviceman-page-toggle-icon.closed {
+  transform: rotate(180deg);
+}
+
+/* Map View */
+.serviceman-page-map-view {
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+.serviceman-page-map-view.with-list {
+  width: 0;
+}
+
+.serviceman-page-map-view.full-width {
+  width: 100%;
+}
+
+.serviceman-page-google-map-container {
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+/* Info Window */
+.serviceman-page-info-window {
+  padding: 8px;
+  max-width: 200px;
+}
+
+.serviceman-page-info-window h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #222;
+}
+
+.serviceman-page-info-experience {
+  font-size: 13px;
+  color: #666;
+  margin: 0 0 8px 0;
+}
+
+.serviceman-page-info-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.serviceman-page-info-rating {
+  display: flex;
+  align-items: center;
+}
+
+.serviceman-page-info-price {
+  color: #4caf50;
+  font-weight: 500;
+  font-size: 14px;
+  margin: 0;
+}
+
+.serviceman-page-view-profile-button {
+  width: 100%;
+  background-color: #10b981; /* Changed from green to blue */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.serviceman-page-quote-otp {
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 5px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.serviceman-page-view-profile-button:hover {
+  background-color: #029d69; /* Darker blue on hover */
+}
+
+/* Provider Profile */
+.serviceman-page-back-button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.serviceman-page-profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.serviceman-page-profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 16px;
+  border: 3px solid #10b981; /* Changed from green to blue */
+}
+
+.serviceman-page-profile-title h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.serviceman-page-profile-title p {
+  font-size: 16px;
+  color: #999;
+  margin: 0;
+}
+
+.serviceman-page-profile-divider {
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 24px 0;
+}
+
+.serviceman-page-profile-pin-section {
+  margin-bottom: 24px;
+}
+
+.serviceman-page-pin-warning {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 16px;
+}
+
+.serviceman-page-pin-container {
+  margin-bottom: 16px;
+}
+
+.serviceman-page-pin-title {
+  font-size: 18px;
+  color: #10b981; /* Changed from green to blue */
+  margin: 0 0 12px 0;
+}
+
+.serviceman-page-pin-digits {
+  display: flex;
+  gap: 10px;
+  color : 10b981;
+}
+
+.serviceman-page-pin-digit {
+  width: 50px;
+  height: 50px;
+  background-color: #333;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  border: 1px solid #10b981; /* Changed from green to blue */
+}
+
+.serviceman-page-profile-info-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.serviceman-page-profile-rating-container {
+  background-color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+}
+
+.serviceman-page-rating {
+  display: flex;
+  align-items: center;
+  color: #232761; /* Dark blue for rating */
+  font-weight: 600;
+}
+
+.serviceman-page-star {
+  color: #f59e0b; /* Amber color for star */
+  margin-left: 2px;
+}
+
+.serviceman-page-profile-id {
+  flex: 1;
+  font-size: 16px;
+}
+
+.serviceman-page-id-value {
+  font-weight: 600;
+  color: #10b981; /* Changed from green to blue */
+}
+
+.serviceman-page-call-button {
+  background: linear-gradient(to right, #10b981, #3b82f6); /* Blue gradient */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.serviceman-page-call-button:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.serviceman-page-call-icon {
+  color: white;
+}
+
+.serviceman-page-profile-milestone {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0 0 24px 0;
+  padding: 15px;
+  background-color: rgba(14, 165, 233, 0.1); /* Light blue background */
+  border-radius: 8px;
+  border-left: 4px solid #10b981;
+}
+
+.serviceman-page-profile-contact {
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+}
+
+.serviceman-page-contact-link {
+  color: #10b981; /* Changed from green to blue */
+  text-decoration: underline;
+  margin-left: 5px;
+}
+
+.serviceman-page-contact-link:hover {
+  color: #029d69; /* Lighter blue on hover */
+}
+
+/* Footer */
+.serviceman-page-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 8px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #1a1e4d;
+  backdrop-filter: blur(5px);
+  font-size: 14px;
+  z-index: 5;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .serviceman-page-list-panel.open {
+    width: 100%;
+  }
+
+  .serviceman-page-toggle-button {
+    left: 20px;
+    transform: translateX(-30px);
+  }
+
+  .serviceman-page-toggle-button.closed {
+    transform: translateX(0px);
+  }  
+
+  .serviceman-page-map-view.full-width {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .serviceman-page-list-content {
+    padding: 15px;
+  }
+
+  .serviceman-page-search-input {
+    max-width: 70%;
+    padding: 10px 10px 10px 35px;
+    font-size: 13px;
+  }
+
+  .serviceman-page-list-title {
+    font-size: 20px;
+  }
+
+  .serviceman-page-provider-avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .serviceman-page-provider-info h3 {
+    font-size: 14px;
+  }
+
+  .serviceman-page-provider-experience {
+    font-size: 12px;
+  }
+
+  .serviceman-page-pin-digit {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+}
+
+/* Media Queries for larger screens */
+@media (min-width: 768px) {
+  .serviceman-page-list-panel.open {
+    width: 400px;
+  }
+
+  .serviceman-page-toggle-button.open {
+    left: 380px;
+  }
+
+  .serviceman-page-map-view.with-list {
+    width: calc(100% - 400px);
+    margin-left: 400px;
+  }
+}
+
+/* Animation for transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.serviceman-page-provider-profile {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Accessibility focus styles */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #10b981; /* Changed from green to blue */
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .serviceman-page-service-provider-map {
+    background: none;
+  }
+
+  .serviceman-page-list-panel {
+    background-color: white;
+    color: black;
+  }
+
+  .serviceman-page-call-button,
+  .serviceman-page-request-button {
+    background: #eee !important;
+    color: #333 !important;
+    border: 1px solid #ccc;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .serviceman-page-service-provider-map {
+    background-color: #111827;
+  }
+
+  .serviceman-page-info-window {
+    background-color: #1f2937;
+    color: #f9fafb;
+  }
+
+  .serviceman-page-info-window h3 {
+    color: #f9fafb;
+  }
+
+  .serviceman-page-info-experience {
+    color: #d1d5db;
+  }
+}

@@ -1,0 +1,302 @@
+/* admin-global.css */
+/* Global Reset and Variables specifically for Admin to avoid conflicting with generic User apps padding */
+
+:root {
+    --admin-primary-blue: #2563eb;
+    --admin-bg: #f8fafc;
+    --admin-card-bg: rgba(255, 255, 255, 0.95);
+    --admin-text-main: #0f172a;
+    --admin-text-muted: #64748b;
+    --admin-border: #e2e8f0;
+    --admin-hover-bg: #f1f5f9;
+    --admin-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --admin-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --admin-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --admin-transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --admin-radius-lg: 12px;
+    --admin-radius-md: 8px;
+}
+
+/* Base Body and Wrappers for Admin */
+.admin-sidebar-container+div,
+/* The main content area next to sidebar */
+.table-container {
+    display: flex;
+    background-color: var(--admin-bg);
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table-container {
+    padding: 0 !important;
+    overflow-x: auto;
+}
+
+.admin-section {
+    flex: 1;
+    flex-direction: column;
+    padding: 32px;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.article-section {
+    background: var(--admin-card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: var(--admin-radius-lg);
+    box-shadow: var(--admin-shadow-lg);
+    padding: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 32px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.admin-news-header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+/* Generic Table Overrides (Targeting .table to catch everything) */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--admin-radius-md);
+    overflow: hidden;
+    box-shadow: var(--admin-shadow-md);
+    background-color: white;
+    margin-top: 20px;
+}
+
+.table th,
+.table td {
+    padding: 16px;
+    text-align: left;
+    border: none !important;
+    /* Strip old borders */
+    border-bottom: 1px solid var(--admin-border) !important;
+}
+
+.table th {
+    background-color: var(--admin-bg) !important;
+    color: var(--admin-text-muted) !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.table td {
+    color: var(--admin-text-main);
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.table tbody tr {
+    transition: var(--admin-transition);
+}
+
+.table tbody tr:hover {
+    background-color: var(--admin-hover-bg) !important;
+    transform: translateY(-1px);
+}
+
+.table tbody tr:last-child td {
+    border-bottom: none !important;
+}
+
+/* Generic Forms, Selects, and Inputs */
+.admin-section input[type="text"],
+.admin-section input[type="number"],
+.admin-section input[type="email"],
+.admin-section select,
+.admin-section textarea {
+    border-radius: var(--admin-radius-md);
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    transition: var(--admin-transition);
+    background-color: white;
+    color: var(--admin-text-main);
+}
+
+/* Override .section-selects specifically */
+.section-selects {
+    width: auto !important;
+    min-height: auto !important;
+    padding: 8px 16px !important;
+    font-weight: 500;
+}
+
+/* Target all generic action buttons (.green-btn, .assign-btn, typical table buttons) */
+button {
+    font-family: inherit;
+}
+
+.table button,
+.green-btn,
+.assign-btn,
+.btn,
+.submit-btn {
+    background-color: var(--admin-primary-blue) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 8px 16px !important;
+    font-weight: 500;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: var(--admin-transition);
+    box-shadow: var(--admin-shadow-sm);
+}
+
+.table button:hover,
+.green-btn:hover,
+.assign-btn:hover,
+.btn:hover,
+.submit-btn:hover {
+    background-color: #1d4ed8 !important;
+    /* Darker blue */
+    box-shadow: var(--admin-shadow-md);
+    transform: translateY(-1px);
+}
+
+.table button:active,
+.green-btn:active,
+.assign-btn:active,
+.btn:active,
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Modals */
+.modal-overlay {
+    background-color: rgba(15, 23, 42, 0.6) !important;
+    backdrop-filter: blur(4px);
+}
+
+.modal-content,
+.modal {
+    background-color: white !important;
+    border-radius: var(--admin-radius-lg) !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+    padding: 32px !important;
+    animation: modalPop 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    border: none !important;
+}
+
+@keyframes modalPop {
+    0% {
+        opacity: 0;
+        transform: scale(0.95) translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.modal-overlay h2,
+.modal h2,
+.modal-content h3 {
+    margin-top: 0;
+    color: var(--admin-text-main);
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+/* Image styling in tables */
+.table img,
+td img {
+    border-radius: var(--admin-radius-md);
+    box-shadow: var(--admin-shadow-sm);
+    object-fit: cover;
+    border: 1px solid var(--admin-border);
+}
+
+/* Pagination Overrides */
+.pagination {
+    margin-top: 32px !important;
+    gap: 8px !important;
+}
+
+.page-button {
+    background-color: white !important;
+    color: var(--admin-text-muted) !important;
+    border: 1px solid var(--admin-border) !important;
+    border-radius: var(--admin-radius-md) !important;
+    padding: 8px 14px !important;
+    font-weight: 500;
+    transition: var(--admin-transition);
+}
+
+.page-button:hover:not(:disabled) {
+    background-color: var(--admin-hover-bg) !important;
+    color: var(--admin-text-main) !important;
+}
+
+.page-button.active {
+    background-color: var(--admin-primary-blue) !important;
+    color: white !important;
+    border-color: var(--admin-primary-blue) !important;
+    box-shadow: var(--admin-shadow-sm);
+}
+
+.page-button:disabled {
+    opacity: 0.5;
+    background-color: var(--admin-bg) !important;
+}
+
+/* Universal Filter and Search Box (Used in PropertyDetails, etc.) */
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 16px;
+    border-radius: var(--admin-radius-md);
+    background-color: white;
+    box-shadow: var(--admin-shadow-sm);
+    border: 1px solid var(--admin-border);
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    flex-grow: 1;
+    min-width: 250px;
+    padding: 12px 16px;
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-md);
+    font-size: 0.95rem;
+    background-color: white;
+    transition: var(--admin-transition);
+}
+
+.search-box:focus {
+    outline: none;
+    border-color: var(--admin-primary-blue) !important;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1) !important;
+}
+
+.filter-dropdown {
+    min-width: 150px;
+    padding: 12px 16px;
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-md);
+    font-size: 0.95rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Modal Image Grid */
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 16px;
+}

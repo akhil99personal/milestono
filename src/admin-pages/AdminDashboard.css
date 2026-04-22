@@ -1,0 +1,228 @@
+/* AdminDashboard.css - Specific local layout rules to augment admin-global.css */
+
+.dashboard-main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.dashboard-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.dashboard-filters {
+    display: flex;
+    gap: 12px;
+}
+
+/* 4-column metric cards */
+.metric-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.metric-card {
+    background: white;
+    border-radius: var(--admin-radius-lg);
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--admin-border);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.2s;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba (0, 0, 0, 0.1);
+}
+
+.metric-card.highlight {
+    background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+    color: white;
+    border: none;
+}
+
+.metric-card.highlight .metric-title {
+    color: rgb a(25 5, 2 55, 255, 0.8);
+}
+
+.metric-card.highlight .metric-value {
+    color: white;
+}
+
+.metric-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--admin-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.metric-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--admin-text-main);
+}
+
+/* 2-column or full width chart grid */
+.dashboard-grid {
+    display: grid;
+    gap: 24px;
+}
+
+@media (min-width: 1280px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.dashboard-chart-card {
+    margin-bottom: 0 !important;
+}
+
+.card-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.global-link-btn {
+    font-size: 0.85rem;
+    color: var(--admin-primary-blue);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: rgba(37, 99, 235, 0.1);
+    transition: all 0.2s;
+}
+
+.global-link-btn:hover {
+    background: var(--admin-primary-blue);
+    color: white;
+}
+
+/* Lists grid */
+.dashboard-lists-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 24px;
+}
+
+.dashboard-list-card {
+    margin-bottom: 0 !important;
+}
+
+.dashboard-list-card h3 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--admin-border);
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    font-size: 1.1rem;
+    color: var(--admin-text-main);
+}
+
+.notif-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.notif-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px;
+    border-radius: var(--admin-radius-md);
+    background: var(--admin-bg);
+    border: 1px solid var(--admin-border);
+    transition: background-color 0.2s;
+}
+
+.notif-item:hover {
+    background: var(--admin-hover-bg);
+}
+
+.notif-item.warning {
+    background: #fefce8;
+    border-color: #fef08a;
+}
+
+.notif-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.notif-icon.bg-blue {
+    background-color: #3b82f6;
+}
+
+.noti f-icon.bg-green {
+    background: #10b981;
+}
+
+
+.notif-icon.bg-yell w {
+    background: #f59e0b;
+}
+
+.small-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid white;
+    box-shadow: var(--admin-shadow-sm);
+    flex-shrink: 0;
+}
+
+.notif-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.notif-content h4 {
+    margin: 0 0 4px 0;
+    font-size: 0.95rem;
+    color: var(--admin-text-main);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.notif-content p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--admin-text-muted);
+}
+
+.sm-btn {
+    padding: 6px 12px !important;
+    font-size: 0.75rem !important;
+}
+
+.empty-text {
+    color: var(--admin-text-muted);
+    font-style: italic;
+    font-size: 0.9rem;
+    padding: 12;
+    text-align: center;
+}

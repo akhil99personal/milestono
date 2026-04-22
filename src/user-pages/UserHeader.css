@@ -1,0 +1,136 @@
+.user-header-navigation-header {
+    position: fixed;
+    top:0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    background-color: var(--primary-color);
+    padding: 0.8rem 1rem;
+    border-bottom: 0.1px solid var(--primary-color);
+    z-index: 1;
+    max-width: none;
+    margin: 0;
+}
+
+.userHeaderNavbar{  
+    display: flex;
+    width: auto;
+    height: auto;
+}
+
+.navigation-header .property-search-bar{
+    gap: 25px;
+}
+
+.navigation-header .userProfileNavbar{
+    margin: 0 10px;
+    margin-top: 4px;
+}
+
+.navigation-header .post-button{
+  margin: auto 1.2rem;
+  width: 150px;
+  height: 35px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  padding: .2rem;
+  border-radius: 9px;
+  font-size: 1rem;
+  border: solid var(--secondary-color);
+  transition: all 0.3s ease;
+}
+
+.navigation-header .post-button:hover{
+    border: solid var(--secondary-color);
+    scale: 1.05;
+    color: var(--text-color);
+}
+
+.navigation-header p {
+    min-width: fit-content;
+    align-items: center;
+    letter-spacing: 0.5px;
+    font-size: 22px;
+    margin: 0rem 2rem;
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+.user-header-navigation-header p i {
+    margin-right: 0.7rem;
+    font-size: 1.2rem;
+}
+
+.user-icon {
+    background: var(--text-color);
+}
+
+.user>i {
+    background-color: transparent;
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.back-button {
+    margin-right: 7px;
+    font-weight: 900;
+    cursor: pointer;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.user-header-red-text {
+    color: var(--primary-color);
+  }
+
+@media (max-width: 700px) {
+
+    .userHeaderNavbar{
+        display: none;
+    }
+
+    .navigation-header {
+        display: block;
+        position:relative;
+        align-items: start;
+        align-content: start;
+        flex-direction: column;
+        align-items: none;
+        padding: 1rem 2%;
+    }
+
+    .navigation-header p {
+        width: 100%;
+        font-size: 1.2rem;
+        letter-spacing: 0.3px;
+    }
+
+    .navigation-header p i {
+        font-size: 1.2rem;
+    }
+
+    .navigation-header .property-search-bar{
+        width: 95%;
+        margin: 1rem 0;
+        gap: 0;
+    }
+
+    .user>i {
+        border-radius: 50%;
+        color: var(--secondary-color);
+        font-size: 2.4rem;
+        cursor: pointer;
+        margin: 0;
+        padding: 0;
+    }
+
+    .back-button {
+        margin-right: 7px;
+        font-weight: 900;
+        cursor: pointer;
+    }
+}

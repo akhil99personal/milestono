@@ -1,0 +1,98 @@
+.property-form-1-property-form-heading {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-bottom: 0.1875rem;
+}
+
+.property-form-1-property-form-heading2 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0.625rem;
+}
+
+.property-form-1-category {
+  margin-bottom: 0.625rem;
+}
+
+.property-form-1-category-title {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 0.3125rem;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.property-form-1-category-type {
+  display: flex;
+}
+
+.property-form-1-width-30 {
+  width: 30%;
+  text-align: center;
+}
+
+.property-form-1-selectedcat {
+  border-bottom: 0.1875rem solid #ff6666;
+}
+
+.property-form-1-options {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 0.3125rem;
+}
+
+.property-form-1-option {
+  background-color: #ffcccc;
+  color: var(--text-color);
+  padding: 0.3125rem 0.625rem;
+  margin-right: 0.625rem;
+  margin-bottom: 0.625rem;
+  border-radius: 0.1875rem;
+  cursor: pointer;
+}
+
+.property-form-1-selected {
+  background-color: #ff6666;
+  color: var(--secondary-color);
+}
+
+.property-form-1-selected-options {
+  margin-top: 0.625rem;
+}
+
+.property-form-1-selected-option {
+  background-color: #ffcccc;
+  color: var(--text-color);
+  padding: 0.3125rem 0.625rem;
+  margin-right: 0.3125rem;
+  margin-bottom: 0.3125rem;
+  border-radius: 0.1875rem;
+  display: inline-block;
+}
+
+.property-form-1-remove-option {
+  margin-left: 0.3125rem;
+  cursor: pointer;
+}
+
+.property-form-1-next-button {
+  background-color: #ff6666;
+  color: var(--secondary-color);
+  padding: 0.625rem 1.25rem;
+  border: none;
+  border-radius: 0.1875rem;
+  cursor: pointer;
+  display: block;
+  margin: 1.25rem auto;
+}
+
+.property-form-1-next-button:hover {
+  background-color: #ff6666;
+}
+
+.property-form-1-error {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 0.3125rem;
+  margin-bottom: 0.625rem;
+}

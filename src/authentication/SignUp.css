@@ -1,0 +1,283 @@
+.signup {
+    width: 70%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    margin: 0rem auto;
+    background-color: transparent;
+}
+
+.signup .signup-image {
+    width: 50%;
+    display: flex;
+    margin-top: 4rem;
+}
+
+.signup .signup-image img {
+    width: 100%;
+}
+
+.signup-form {
+    width: 50%;
+    height: auto;
+    padding: 1.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background-color: transparent;
+}
+
+.signup-form h2 {
+    color: var(--primary-color);
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+.signup-form>p {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    margin: 1rem auto;
+    text-align: center;
+}
+
+
+.signup-form form {
+    width: 90%;
+}
+
+.signup-form form input {
+    width: 100%;
+    margin: 0.5rem 0;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    border: 1px solid #ccc;
+    transition: all 0.1s;
+    padding: 12px;
+    border-radius: 9px;
+}
+
+.signup-form form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 8px var(--primary-color);
+}
+
+.signup-form form button {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    margin: 1rem 0 0.5rem 0;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.4s;
+    margin-bottom: 1rem;
+    padding: 12px;
+    border-radius: 9px;
+}
+
+.signup-form form button:hover {
+    background-color: var(--primary-color);
+}
+
+.signup-form form button:focus {
+    outline: none;
+    background-color: var(--hover-color);
+}
+
+.signup-form .line-with-or {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.signup-form .line-with-or .or {
+    margin: 0 0.7rem;
+    color: var(--hover-color);
+    font-size: 0.88rem;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.signup-form .line-with-or .line {
+    flex: 1;
+    height: 0.7px;
+    background-color: var(--primary-color);
+}
+
+.signup-form .signup-with-google {
+    width: 90%;
+    padding: 12px;
+    margin: 1rem 0 0.5rem 0;
+    color: var(--primary-color);
+    background-color: var(--background-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid var(--primary-color);
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.signup-form .signup-with-google:hover {
+    background-color: rgb(255, 234, 238);
+}
+
+.signup-form .signup-with-google img {
+    height: 15px;
+    width: 15px;
+    margin-right: 0.5rem;
+}
+
+.signup-form .signup-with-google p {
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.signup-form .sign-in-message {
+    color: gray;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    text-align: center;
+    transition: all 0.1s;
+    margin: 1rem 0;
+}
+
+.signup-form .sign-in-message a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 400;
+    transition: all 0.2s;
+}
+
+.signup-form .sign-in-message a:hover {
+    color: var(--primary-color);
+}
+
+
+.signup-form .sign-in-message a:focus {
+    outline: none;
+    color: var(--primary-color);
+}
+.verify-btn {
+    display: inline-block;
+    margin: 0 10px 10px 5px;
+    padding: 2px 5px;
+    background-color: #4CAF50;
+    color: var(--background-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .password-container {
+    position: relative;
+    width: 100%;
+  }
+  .eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+    font-size: 18px;
+  }
+  
+  .eye-icon:hover {
+    color: #000;
+  }
+
+@media (max-width: 700px) {
+    .signup {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        align-content: center;
+        justify-content: start;
+        padding-top: 4rem;
+        background-image: url(../images/loginbg.jpg);
+        background-size: cover;
+        background-position:center;
+        background-repeat: no-repeat;
+        height: 97.5vmax;
+    }
+
+    .signup .signup-image {
+        display: none;
+    }
+
+    .signup-form {
+        width: 100%;
+        padding: 0;
+    }
+
+    .signup-form h2 {
+        font-size: 3.5rem;
+    }
+
+    .signup-form p {
+        font-size: 1.45rem;
+        color: var(--text-color);
+        margin-top: 1.8rem;
+        margin-bottom: 1.8rem;
+    }
+
+    .signup form input{
+        font-size: 1.6rem;
+        padding: 12px;
+        border-radius: 9px;
+    }
+
+    .signup form button{
+        font-size: 1.6rem;
+        padding: 12px;
+        border-radius: 9px;
+    }
+
+    .signup-form .line-with-or {
+        margin: 1rem 0;
+    }
+
+    .signup-form .line-with-or .or {
+       font-size: 1.5rem;
+    }
+
+    .signup-with-google{
+        width: 90%;
+        padding: 12px;
+        margin: 1rem 0 0.5rem 0;
+        border-radius: 9px;
+        font-size: 1.5rem;
+        color: var(--text-color);
+    }
+
+    .signup .sign-in-message p{
+        font-size: 1.55rem;
+        color: var(--background-color);
+    }
+}

@@ -1,0 +1,183 @@
+/* Feedback Button Styles */
+.feedback-container {
+  position: fixed;
+  right: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.feedback-button {
+  display: grid;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback-button img {
+  width: 40px;
+  margin: 0 auto;
+}
+
+.feedback-button:hover {
+  background-color: var(--hover-color);
+}
+
+/* Modal Overlay */
+.feedback-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center; /* Centers the modal horizontally */
+  align-items: center; /* Centers the modal vertically */
+  z-index: 2000;
+}
+
+/* Modal Content */
+.feedback-modal-content {
+  background: var(--secondary-color);
+  border-radius: 10px;
+  width: 400px; /* Adjust width as needed */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow for aesthetics */
+  animation: fadeIn 0.3s ease-out; /* Fade-in effect */
+  position: relative;
+  max-width: 90%;
+}
+
+.feedback-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.feedback-modal-header h2 {
+  margin: 0;
+}
+
+.feedback-close-button {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.feedback-modal-body p {
+  margin: 10px 0;
+}
+
+.feedback-modal-body form {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-modal-body label {
+  margin-bottom: 25px;
+}
+
+.feedback-modal-body span {
+  margin-bottom: 25px;
+}
+
+.feedback-modal-body input,
+.feedback-modal-body textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 0.5rem;
+  resize: vertical;
+  max-height: 120px;
+}
+
+.feedback-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.feedback-send-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.feedback-send-button:hover {
+  background-color: var(--hover-color);
+}
+
+.feedback-cancel-button {
+  background: none;
+  border: 1px solid var(--text-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.feedback-cancel-button:hover {
+  background-color: transparent;
+}
+
+/* Add the CSS in FeedbackOverlay.css */
+
+.feedback-confirmation-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center !important;
+}
+
+.feedback-confirmation-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center !important;
+  position: relative;
+  z-index: 1000;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.ok-button {
+  text-align: center !important;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ok-button:hover {
+  background-color: #0056b3;
+}
